@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thien Nhan Vo – Undergraduate Research Student in Robotics & AI at HUTECH University, researching LLMs, Privacy-Preserving AI, BCI, and Smart Contract Security.">
+    <meta name="keywords" content="Thien Nhan Vo, AI, Machine Learning, LLM, BCI, Smart Contract, HUTECH, Research">
+    <meta name="author" content="Thien Nhan Vo">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Thien Nhan Vo – Undergraduate Research Student">
+    <meta property="og:description" content="Robotics & AI researcher at HUTECH University, working on LLMs, privacy AI, BCI, and smart contract fuzzing.">
+    <meta property="og:image" content="images/profile.jpg">
+
+    <title>Thien Nhan Vo | AI Researcher</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <style>
+        /* ============================================================
+           DESIGN TOKENS
+        ============================================================ */
+        :root {
+            --bg-primary:    #f5f7fa;
+            --bg-secondary:  #eef1f7;
+            --bg-card:       rgba(255,255,255,0.85);
+            --bg-card-hover: rgba(255,255,255,0.98);
+            --border:        rgba(0,0,0,0.08);
+            --border-accent: rgba(59,130,246,0.35);
+
+            --accent-blue:   #3b82f6;
+            --accent-cyan:   #06b6d4;
+            --accent-purple: #8b5cf6;
+            --accent-green:  #22c55e;
+            --accent-orange: #f59e0b;
+
+            --text-primary:  #0f172a;
+            --text-secondary:#475569;
+            --text-muted:    #94a3b8;
+
+            --gradient-hero: linear-gradient(135deg, #dbeafe 0%, #f5f7fa 60%, #ede9fe 100%);
+            --gradient-accent: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            --gradient-card:   linear-gradient(135deg, rgba(59,130,246,0.06), rgba(139,92,246,0.06));
+
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+
+            --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+            --shadow-glow: 0 0 40px rgba(59,130,246,0.10);
+        }
+
+        /* ============================================================
+           RESET & BASE
+        ============================================================ */
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: linear-gradient(135deg, #f0f4ff 0%, #f5f7fa 50%, #f3f0ff 100%);
+            min-height: 100vh;
+        }
+
+        a { color: var(--accent-blue); text-decoration: none; transition: color .2s; }
+        a:hover { color: var(--accent-cyan); }
+
+        /* ============================================================
+           ANIMATED BACKGROUND
+        ============================================================ */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+            z-index: 0;
+            animation: orbFloat 12s ease-in-out infinite alternate;
+        }
+        .bg-orb-1 {
+            width: 600px; height: 600px;
+            top: -200px; left: -150px;
+            background: radial-gradient(circle, rgba(59,130,246,0.10), transparent 70%);
+        }
+        .bg-orb-2 {
+            width: 500px; height: 500px;
+            bottom: -150px; right: -100px;
+            background: radial-gradient(circle, rgba(139,92,246,0.08), transparent 70%);
+            animation-delay: -6s;
+        }
+
+        @keyframes orbFloat {
+            0%   { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, 40px) scale(1.05); }
+        }
+
+        /* ============================================================
+           NAVIGATION
+        ============================================================ */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 0;
+            background: rgba(245,247,250,0.90);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 32px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 16px;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: var(--radius-sm);
+            transition: all .2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background: rgba(59,130,246,0.08);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-blue);
+            background: rgba(59,130,246,0.10);
+        }
+
+        /* ============================================================
+           MAIN WRAPPER
+        ============================================================ */
+        main {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 32px 80px;
+        }
+
+        /* ============================================================
+           HERO SECTION
+        ============================================================ */
+        .hero {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 48px;
+            align-items: center;
+            padding: 56px 0 64px;
+        }
+
+        .avatar-wrap {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .avatar-ring {
+            width: 150px; height: 150px;
+            border-radius: 50%;
+            padding: 3px;
+            background: var(--gradient-accent);
+            box-shadow: 0 8px 32px rgba(59,130,246,0.22);
+        }
+
+        .avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #ffffff;
+            background: #ffffff;
+        }
+
+        .avatar-ring img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 22%;
+            display: block;
+        }
+
+        .status-dot {
+            position: absolute;
+            bottom: 6px; right: 6px;
+            width: 16px; height: 16px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            animation: pulse-dot 2.5s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(104,211,145,0.5); }
+            50%       { box-shadow: 0 0 0 8px rgba(104,211,145,0); }
+        }
+
+        .hero-text {}
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(99,179,237,0.1);
+            border: 1px solid rgba(99,179,237,0.25);
+            color: var(--accent-blue);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 100px;
+            margin-bottom: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero-name {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            line-height: 1.15;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #0f172a 30%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        .hero-affil {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .hero-contact {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .contact-item i { color: var(--accent-blue); font-size: 13px; }
+        .contact-item a { color: var(--text-secondary); }
+        .contact-item a:hover { color: var(--accent-blue); }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            background: #ffffff;
+            color: var(--text-secondary);
+            transition: all .25s ease;
+            cursor: pointer;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .social-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            background: rgba(59,130,246,0.06);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(59,130,246,0.15);
+        }
+
+        .social-btn i { font-size: 14px; }
+
+        /* ============================================================
+           SECTION STYLES
+        ============================================================ */
+        section {
+            margin-bottom: 72px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .section-icon {
+            width: 36px; height: 36px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .icon-blue   { background: rgba(99,179,237,0.15); color: var(--accent-blue); }
+        .icon-purple { background: rgba(183,148,244,0.15); color: var(--accent-purple); }
+        .icon-green  { background: rgba(104,211,145,0.15); color: var(--accent-green); }
+        .icon-orange { background: rgba(246,173,85,0.15);  color: var(--accent-orange); }
+        .icon-cyan   { background: rgba(118,228,247,0.15); color: var(--accent-cyan); }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--text-primary);
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
+        }
+
+        /* ============================================================
+           BIO / ABOUT
+        ============================================================ */
+        .bio-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px 32px;
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+        }
+
+        .bio-card p + p { margin-top: 14px; }
+
+        /* ============================================================
+           EXPERIENCE CARDS
+        ============================================================ */
+        .exp-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .exp-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px 28px;
+            transition: all .25s ease;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exp-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: var(--gradient-accent);
+            border-radius: 3px 0 0 3px;
+            opacity: 0;
+            transition: opacity .25s;
+        }
+
+        .exp-card:hover {
+            border-color: var(--border-accent);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card), var(--shadow-glow);
+        }
+
+        .exp-card:hover::before { opacity: 1; }
+
+        .exp-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .exp-role {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .exp-date {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--accent-blue);
+            background: rgba(99,179,237,0.1);
+            border: 1px solid rgba(99,179,237,0.2);
+            padding: 3px 10px;
+            border-radius: 100px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .exp-org {
+            font-size: 13px;
+            color: var(--accent-blue);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .exp-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .exp-advisor {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-muted);
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
+        }
+
+        .exp-advisor i { color: var(--accent-purple); margin-top: 2px; }
+
+        .exp-advisor a {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+
+        .exp-advisor a:hover { color: var(--accent-cyan); }
+
+        /* ============================================================
+           ACHIEVEMENTS
+        ============================================================ */
+        .achievement-group { margin-bottom: 28px; }
+
+        .achievement-group-title {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            padding-left: 4px;
+        }
+
+        .achievement-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .achievement-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            transition: all .25s;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+        }
+
+        .achievement-item:hover {
+            border-color: var(--border-accent);
+            background: var(--bg-card-hover);
+        }
+
+        .achievement-year {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-orange);
+            background: rgba(246,173,85,0.1);
+            border: 1px solid rgba(246,173,85,0.2);
+            padding: 3px 10px;
+            border-radius: 100px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .achievement-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .achievement-text strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Gold / Silver / Bronze medals */
+        .medal-gold   { color: #f6c90e; }
+        .medal-silver { color: #c0c0c0; }
+        .medal-bronze { color: #cd7f32; }
+
+        /* ============================================================
+           SKILLS
+        ============================================================ */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .skill-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 18px 20px;
+            transition: all .25s;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+        }
+
+        .skill-card:hover {
+            border-color: var(--border-accent);
+            background: #f0f7ff;
+        }
+
+        .skill-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .skill-label i { font-size: 13px; }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            font-size: 12px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 100px;
+            background: #f1f5f9;
+            border: 1px solid rgba(0,0,0,0.08);
+            color: #475569;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* ============================================================
+           PUBLICATIONS
+        ============================================================ */
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .pub-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px 28px;
+            transition: all .25s ease;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pub-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            border-radius: 3px 0 0 3px;
+            opacity: 0;
+            transition: opacity .25s;
+        }
+
+        .pub-card.journal::before  { background: linear-gradient(180deg, #f6c90e, #f6ad55); }
+        .pub-card.conference::before { background: linear-gradient(180deg, #63b3ed, #76e4f7); }
+        .pub-card.preprint::before  { background: linear-gradient(180deg, #b794f4, #fc8181); }
+
+        .pub-card:hover {
+            border-color: var(--border-accent);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card), var(--shadow-glow);
+        }
+
+        .pub-card:hover::before { opacity: 1; }
+
+        .pub-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+
+        .pub-type-badge {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 3px 10px;
+            border-radius: 100px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .badge-journal    { background: rgba(245,158,11,0.10);  color: #b45309;  border: 1px solid rgba(245,158,11,0.25); }
+        .badge-conference { background: rgba(59,130,246,0.10);  color: #2563eb; border: 1px solid rgba(59,130,246,0.25); }
+        .badge-preprint   { background: rgba(139,92,246,0.10); color: #7c3aed; border: 1px solid rgba(139,92,246,0.25); }
+
+        .pub-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.45;
+        }
+
+        .pub-authors {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 6px;
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+
+        .pub-authors .me {
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .pub-venue {
+            font-size: 13px;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .pub-venue strong {
+            color: var(--accent-orange);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .pub-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #16a34a;
+            background: rgba(34,197,94,0.10);
+            border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 100px;
+            padding: 3px 10px;
+            margin-bottom: 12px;
+        }
+
+        .pub-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .pub-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: #f8fafc;
+            color: var(--text-secondary);
+            transition: all .2s;
+        }
+
+        .pub-link-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            background: rgba(59,130,246,0.06);
+            transform: translateY(-1px);
+        }
+
+        .pub-link-btn i { font-size: 12px; }
+
+        /* ============================================================
+           REFEREES
+        ============================================================ */
+        .referees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 14px;
+        }
+
+        .referee-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px 22px;
+            transition: all .25s;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+        }
+
+        .referee-card:hover {
+            border-color: var(--border-accent);
+            background: #f0f7ff;
+            transform: translateY(-2px);
+        }
+
+        .referee-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .referee-org {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .referee-email {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 13px;
+            color: var(--accent-blue);
+        }
+
+        .referee-email i { font-size: 12px; }
+        .referee-email a { color: var(--accent-blue); }
+        .referee-email a:hover { color: var(--accent-cyan); }
+
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+        footer {
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 28px 32px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        footer a { color: var(--accent-blue); }
+
+        /* ============================================================
+           DIVIDER
+        ============================================================ */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 0 0 28px;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+        ============================================================ */
+        @media (max-width: 700px) {
+            main { padding: 88px 20px 60px; }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 28px;
+            }
+
+            .avatar-wrap { margin: 0 auto; }
+
+            .hero-contact { justify-content: center; }
+            .social-links { justify-content: center; }
+
+            .skills-grid { grid-template-columns: 1fr; }
+
+            .referees-grid { grid-template-columns: 1fr; }
+
+            .nav-inner { padding: 0 20px; }
+        }
+
+        /* ============================================================
+           SCROLL ANIMATION
+        ============================================================ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background decorations -->
+<div class="bg-grid"></div>
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav>
+    <div class="nav-inner">
+        <span class="nav-logo">Thien Nhan Vo</span>
+        <ul class="nav-links">
+            <li><a href="#about" class="active">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Papers</a></li>
+            <li><a href="#achievements">Awards</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#referees">Referees</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ============================================================
+     MAIN
+============================================================ -->
+<main>
+
+    <!-- ─── HERO ─── -->
+    <div class="hero" id="about">
+        <div class="avatar-wrap">
+            <div class="avatar-ring">
+                <div class="avatar-inner">
+                    <img src="images/profile.jpg" alt="Thien Nhan Vo">
+                </div>
+            </div>
+            <span class="status-dot" title="Open to research collaboration"></span>
+        </div>
+
+        <div class="hero-text">
+            <div class="hero-badge"><i class="fa-solid fa-microchip"></i>Undergraduate Researcher</div>
+            <h1 class="hero-name">Thien Nhan Vo</h1>
+            <p class="hero-title">Engineering, Robotics and Artificial Intelligence</p>
+            <p class="hero-affil">HUTECH Institute of Engineering · HUTECH University</p>
+
+            <div class="hero-contact">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:thiennhan.math@gmail.com">thiennhan.math@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(+84) 982 035 143</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Ho Chi Minh City, Vietnam</span>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a class="social-btn" href="https://github.com/thnhan05" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a class="social-btn" href="https://www.linkedin.com/in/thien-nhan-vo-0992032b7/" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+                <a class="social-btn" href="#publications">
+                    <i class="fa-solid fa-book-open"></i> Publications
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── BIO ─── -->
+    <section class="fade-in">
+        <div class="section-header">
+            <div class="section-icon icon-blue"><i class="fa-solid fa-user"></i></div>
+            <h2 class="section-title">About Me</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="bio-card">
+            <p>
+                I am an undergraduate research student in <strong>Robotics and Artificial Intelligence</strong> at
+                <strong>HUTECH University</strong>, currently affiliated with the
+                <strong>Information Security Laboratory (InSec Lab)</strong> at the University of Information Technology,
+                Vietnam National University, Ho Chi Minh City. My research interests span
+                <strong>large language models (LLMs)</strong>, <strong>privacy-preserving AI</strong>,
+                <strong>smart contract security</strong>, and <strong>brain–computer interfaces (BCI)</strong>.
+            </p>
+            <p>
+                I am currently working on LLM-augmented fuzzing for smart contract vulnerability detection,
+                integrating agentic AI workflows to automate test generation, exploit reasoning, and multi-step analysis
+                of Solidity codebases. In parallel, I investigate <strong>privacy attacks and leakage prevention</strong>
+                in AI systems, with a focus on LLM reminder-based techniques.
+            </p>
+            <p>
+                My interdisciplinary portfolio also includes EEG/fNIRS signal processing for BCI systems,
+                AI-based Maximum Power Point Tracking (MPPT) for photovoltaic energy, and hyperspectral imaging
+                for precision agriculture — reflecting a commitment to research that bridges theory and real-world impact.
+            </p>
+        </div>
+    </section>
+
+    <!-- ─── WORK EXPERIENCE ─── -->
+    <section class="fade-in" id="experience">
+        <div class="section-header">
+            <div class="section-icon icon-purple"><i class="fa-solid fa-briefcase"></i></div>
+            <h2 class="section-title">Work Experience</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="exp-list">
+
+            <!-- InSec Lab Internship -->
+            <div class="exp-card">
+                <div class="exp-top">
+                    <div class="exp-role">Intern – Fuzzing Smart Contract with LLM and Agentic AI</div>
+                    <div class="exp-date">Aug 2025 – Jan 2026</div>
+                </div>
+                <div class="exp-org">
+                    <i class="fa-solid fa-building fa-xs"></i>&nbsp;
+                    Information Security Laboratory (InSec Lab) · UIT, VNU-HCM
+                </div>
+                <p class="exp-desc">
+                    Developed an LLM-augmented fuzzing pipeline for smart contract vulnerability detection, integrating
+                    agentic workflows to automate test generation, exploit reasoning, and multi-step analysis across
+                    Solidity codebases.
+                </p>
+                <div class="exp-advisor">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Advisor: <a href="https://scholar.google.com.vn/citations?user=HFzbk7AAAAAJ&hl=vi&oi=ao" target="_blank" rel="noopener">PhD. Phan The Duy</a>,
+                    Information Security Laboratory (InSecLab), UIT, VNU-HCMC</span>
+                </div>
+            </div>
+
+            <!-- STEM Instructor -->
+            <div class="exp-card">
+                <div class="exp-top">
+                    <div class="exp-role">STEM Instructor – STEM Class Od 2025</div>
+                    <div class="exp-date">Jul 2025 – Aug 2025</div>
+                </div>
+                <div class="exp-org">
+                    <i class="fa-solid fa-building fa-xs"></i>&nbsp;
+                    STEM Program 2025
+                </div>
+                <p class="exp-desc">
+                    Provided hands-on STEM sessions; awarded an official certificate for outstanding performance.
+                </p>
+                <div class="exp-advisor">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Advisor: <a href="https://scholar.google.com.vn/citations?view_op=list_works&hl=vi&user=qA0GMx8AAAAJ" target="_blank" rel="noopener">PhD. Viet Anh Hoang</a>,
+                    Energy and Environmental Technology Division, Vietnam–Korea Institute of Science and Technology</span>
+                </div>
+            </div>
+
+            <!-- Co-supervisor -->
+            <div class="exp-card">
+                <div class="exp-top">
+                    <div class="exp-role">Co-supervisor – Undergraduate Thesis</div>
+                    <div class="exp-date">Oct 2025 – Feb 2026</div>
+                </div>
+                <div class="exp-org">
+                    <i class="fa-solid fa-building fa-xs"></i>&nbsp;
+                    HUTECH Institute of Engineering, HUTECH University
+                </div>
+                <p class="exp-desc">
+                    Co-supervised three undergraduate students on the thesis
+                    <em>"Design and Optimal Control of a Hydrogen Production System Using Renewable Energy."</em>
+                </p>
+                <div class="exp-advisor">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Advisor: <a href="https://scholar.google.com.vn/citations?user=Hvd0Ol8AAAAJ&hl=vi&oi=ao" target="_blank" rel="noopener">MS. Pham Quoc Phuong</a>,
+                    HUTECH Institute of Engineering, HUTECH University</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── RESEARCH EXPERIENCE ─── -->
+    <section class="fade-in" id="research">
+        <div class="section-header">
+            <div class="section-icon icon-cyan"><i class="fa-solid fa-flask"></i></div>
+            <h2 class="section-title">Research Experience</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="exp-list">
+
+            <!-- AI with Privacy -->
+            <div class="exp-card">
+                <div class="exp-top">
+                    <div class="exp-role">AI with Privacy</div>
+                    <div class="exp-date">May 2025 – Present</div>
+                </div>
+                <div class="exp-org">
+                    <i class="fa-solid fa-building fa-xs"></i>&nbsp;
+                    Information Security Laboratory (InSec Lab) · UIT, VNU-HCM
+                </div>
+                <p class="exp-desc">
+                    Researching privacy attacks and leakage prevention methods in AI systems, focusing on
+                    LLM reminder-based techniques.
+                </p>
+                <div class="exp-advisor">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Advisor: <a href="https://scholar.google.com.vn/citations?user=HFzbk7AAAAAJ&hl=vi&oi=ao" target="_blank" rel="noopener">PhD. Phan The Duy</a>,
+                    InSecLab, UIT, VNU-HCMC</span>
+                </div>
+            </div>
+
+            <!-- BCI -->
+            <div class="exp-card">
+                <div class="exp-top">
+                    <div class="exp-role">AI–BCI Research and Neuro-Sensing Systems Development</div>
+                    <div class="exp-date">Nov 2025 – Present</div>
+                </div>
+                <div class="exp-org">
+                    <i class="fa-solid fa-building fa-xs"></i>&nbsp;
+                    HAI-Smartlink Research Lab, Anchi STE Company
+                </div>
+                <p class="exp-desc">
+                    Working on signal acquisition and processing for EEG/fNIRS-based Brain–Computer Interface systems,
+                    with applications in AI-driven neural decoding, cognitive-state estimation, and
+                    human–machine interaction.
+                </p>
+                <div class="exp-advisor">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Advisor: <a href="https://scholar.google.com.vn/citations?user=DMn5WRcAAAAJ&hl=vi&oi=ao" target="_blank" rel="noopener">PhD. Xuan The Tran</a>,
+                    GrapheneX–UTS Human-centric AI Centre (HAI), University of Technology Sydney (UTS)</span>
+                </div>
+            </div>
+
+            <!-- MPPT -->
+            <div class="exp-card">
+                <div class="exp-top">
+                    <div class="exp-role">AI-based Maximum Power Point Tracking (MPPT) for Photovoltaic Systems</div>
+                    <div class="exp-date">Nov 2025 – Apr 2026</div>
+                </div>
+                <div class="exp-org">
+                    <i class="fa-solid fa-building fa-xs"></i>&nbsp;
+                    Intelligent MPPT Control Research Project · HUTECH University
+                </div>
+                <p class="exp-desc">
+                    Conducting research on intelligent MPPT controllers using artificial neural networks to improve
+                    efficiency in photovoltaic (PV) energy systems. Work includes PV modeling, ANN dataset
+                    construction, ANN-based MPP prediction, hardware implementation on NI-MyRIO 1900, and
+                    comparative evaluation against traditional MPPT algorithms.
+                </p>
+                <div class="exp-advisor">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Advisor: <a href="https://scholar.google.com.vn/citations?user=Hvd0Ol8AAAAJ&hl=vi&oi=ao" target="_blank" rel="noopener">MS. Pham Quoc Phuong</a>,
+                    HUTECH Institute of Engineering, HUTECH University</span>
+                </div>
+            </div>
+
+            <!-- Hyperspectral -->
+            <div class="exp-card">
+                <div class="exp-top">
+                    <div class="exp-role">Hyperspectral Image Analysis for Crop Health Monitoring</div>
+                    <div class="exp-date">Dec 2025 – Present</div>
+                </div>
+                <div class="exp-org">
+                    <i class="fa-solid fa-building fa-xs"></i>&nbsp;
+                    Hyperspectral Imaging in Precision Agriculture · HUTECH University
+                </div>
+                <p class="exp-desc">
+                    Conducting research on hyperspectral imaging techniques for precision agriculture. Focuses on
+                    spectral–spatial feature extraction, dimensionality reduction, and machine learning–based analysis
+                    for crop health assessment, disease detection, and plant stress monitoring.
+                </p>
+                <div class="exp-advisor">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Advisor: <a href="https://scholar.google.com.vn/citations?hl=vi&user=KI65BcoAAAAJ" target="_blank" rel="noopener">PhD. Quoc Thien Pham</a>,
+                    HUTECH Institute of Engineering, HUTECH University</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── PUBLICATIONS ─── -->
+    <section class="fade-in" id="publications">
+        <div class="section-header">
+            <div class="section-icon icon-blue"><i class="fa-solid fa-book-open"></i></div>
+            <h2 class="section-title">Selected Publications</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="pub-list">
+
+            <!-- Paper 1: Journal – Annals of Mathematics -->
+            <div class="pub-card journal">
+                <div class="pub-top">
+                    <span class="pub-type-badge badge-journal">Journal</span>
+                    <div>
+                        <div class="pub-title">
+                            Existence of Zeros Near the Origin for Hypergraph Independence Polynomials: Applications and Variance Analysis
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-note"><i class="fa-solid fa-circle-check"></i> Accepted, 2026</div>
+                <div class="pub-authors">
+                    <span class="me">Thien Nhan Vo</span> et al.
+                </div>
+                <div class="pub-venue">
+                    <strong>Annals of Mathematics</strong>, 2026
+                </div>
+            </div>
+
+            <!-- Paper 2: Conference – ICCE 2026 -->
+            <div class="pub-card conference">
+                <div class="pub-top">
+                    <span class="pub-type-badge badge-conference">Conference</span>
+                    <div>
+                        <div class="pub-title">
+                            CombinedCNN: Lightweight Spatial-Temporal Attention Network for EEG Intent Recognition
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-note"><i class="fa-solid fa-party-horn"></i> Accepted at ICCE 2026 🎉</div>
+                <div class="pub-authors">
+                    <span class="me">Thien Nhan Vo</span> et al.
+                </div>
+                <div class="pub-venue">
+                    <strong>IEEE International Conference on Consumer Electronics (ICCE) 2026</strong><br>
+                    <span style="font-style:normal;color:var(--accent-purple);font-size:12px;">
+                        <i class="fa-solid fa-star fa-xs"></i>
+                        Selected for the Special Session on <em>Intelligent Multimodal Perception and Cognitive Engineering</em>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Paper 3: Preprint – arXiv EEG Survey -->
+            <div class="pub-card preprint">
+                <div class="pub-top">
+                    <span class="pub-type-badge badge-preprint">Preprint</span>
+                    <div>
+                        <div class="pub-title">
+                            Inter- and Intra-Subject Variability in EEG: A Systematic Survey
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-authors">
+                    Xuan-The Tran, <span class="me">Thien-Nhan Vo</span>, Son-Tung Vu, Thoa-Thi Tran,
+                    Manh-Dat Nguyen, Thomas Do, Chin-Teng Lin
+                </div>
+                <div class="pub-venue">
+                    <strong>arXiv</strong> · arXiv:2602.01019 [q-bio.NC] · 2026
+                </div>
+                <div class="pub-links">
+                    <a class="pub-link-btn" href="https://arxiv.org/abs/2602.01019" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv
+                    </a>
+                    <a class="pub-link-btn" href="https://arxiv.org/pdf/2602.01019" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-file-pdf"></i> PDF
+                    </a>
+                    <button class="pub-link-btn" onclick="navigator.clipboard.writeText('@misc{tran2026interintrasubjectvariabilityeeg,\n      title={Inter- and Intra-Subject Variability in EEG: A Systematic Survey}, \n      author={Xuan-The Tran and Thien-Nhan Vo and Son-Tung Vu and Thoa-Thi Tran and Manh-Dat Nguyen and Thomas Do and Chin-Teng Lin},\n      year={2026},\n      eprint={2602.01019},\n      archivePrefix={arXiv},\n      primaryClass={q-bio.NC},\n      url={https://arxiv.org/abs/2602.01019}\n}'); this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copied!'; setTimeout(()=>this.innerHTML='<i class=\'fa-solid fa-quote-right\'></i> BibTeX', 2000);" style="cursor:pointer;">
+                        <i class="fa-solid fa-quote-right"></i> BibTeX
+                    </button>
+                </div>
+            </div>
+
+            <!-- Paper 4: NeurIPS 2026 Workshop – TRDP-EEG -->
+            <div class="pub-card preprint">
+                <div class="pub-top">
+                    <span class="pub-type-badge badge-preprint">Workshop</span>
+                    <div>
+                        <div class="pub-title">
+                            TRDP-EEG: Time-Resolved Decoding of Perceived and Imagined Visual Object States from EEG
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-note"><i class="fa-solid fa-clock-rotate-left"></i> Under Review</div>
+                <div class="pub-authors">
+                    <span class="me">Vo, T. N.</span>, Tran, X.-T.
+                </div>
+                <div class="pub-venue">
+                    <strong>NeurIPS 2026 Workshop</strong> · Under Review
+                </div>
+            </div>
+
+            <!-- Paper 5: COMOSA 2026 – Dual Evaluation -->
+            <div class="pub-card conference">
+                <div class="pub-top">
+                    <span class="pub-type-badge badge-conference">Conference</span>
+                    <div>
+                        <div class="pub-title">
+                            Dual Evaluation of Purchase Prediction and Ranking in Vietnamese E-commerce
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-note"><i class="fa-solid fa-clock-rotate-left"></i> Under Review</div>
+                <div class="pub-authors">
+                    Ngo, Y. N., Huynh, N. N., Nguyen Bao, H., Truong, T. X., Mai, H.,
+                    <span class="me">Vo, T. N.</span> <span style="font-size:11px;color:var(--text-muted);">(Research Advisor)</span>
+                </div>
+                <div class="pub-venue">
+                    <strong>COMOSA 2026</strong> · Under Review
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── ACADEMIC ACHIEVEMENTS ─── -->
+    <section class="fade-in" id="achievements">
+        <div class="section-header">
+            <div class="section-icon icon-orange"><i class="fa-solid fa-trophy"></i></div>
+            <h2 class="section-title">Academic Achievements &amp; Recognitions</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <!-- AI & CS -->
+        <div class="achievement-group">
+            <p class="achievement-group-title"><i class="fa-solid fa-robot fa-xs"></i>&nbsp; AI &amp; Computer Science Competitions</p>
+            <div class="achievement-list">
+                <div class="achievement-item">
+                    <span class="achievement-year">2026</span>
+                    <div class="achievement-text">
+                        <strong><span class="medal-gold">🥇 Gold Medal</span> – 14th Design, Manufacturing and Application Competition</strong><br>
+                        Project: <em>FRUITCARE AI – Comprehensive AI Solution for Agricultural Inspection &amp; Grading</em>.
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-year">2025</span>
+                    <div class="achievement-text">
+                        <strong>Top 5 Finalist – Youth Digital Citizen Challenge 2025</strong><br>
+                        Team Lead &amp; Solution Architect. Co-hosted by UNDP Vietnam and MUFG Bank.
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-year">2025</span>
+                    <div class="achievement-text">
+                        <strong>Third Prize – 2025 National Student Artificial Intelligence Olympiad (Southern Region)</strong>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-year">2025</span>
+                    <div class="achievement-text">
+                        <strong>Second Prize – VietFuture Awards 2025</strong><br>
+                        Project: <em>RAPP (Reasoning-Aware Adaptive Prompt Protection)</em> in the field of
+                        <strong>Artificial Intelligence and Automation</strong>.
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-year">2025</span>
+                    <div class="achievement-text">
+                        <strong><span class="medal-silver">🥈 Silver Honour (Top 7%)</span> – International Astronomy and Astrophysics Competition</strong>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-year">2026</span>
+                    <div class="achievement-text">
+                        <strong>Encouragement Prize (Top Team) – Startup Pioneers 2026</strong><br>
+                        Received an Encouragement Prize (3,000,000 VND) for proposing an innovative startup solution in sustainability and technology.
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-year">2026</span>
+                    <div class="achievement-text">
+                        <strong>Finalist &amp; Award Recipient – Data For Impact 2026</strong><br>
+                        Recognized in a national data science and AI competition focused on solving social-impact challenges using data analytics and machine learning.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mathematics Olympiads -->
+        <div class="achievement-group">
+            <p class="achievement-group-title"><i class="fa-solid fa-infinity fa-xs"></i>&nbsp; Mathematics Olympiad</p>
+            <div class="achievement-list">
+                <div class="achievement-item">
+                    <span class="achievement-year">2026</span>
+                    <div class="achievement-text"><strong>Participant</strong> – 2026 Vietnam Student Mathematics Olympiad</div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-year">2025</span>
+                    <div class="achievement-text"><strong>Participant</strong> – 2025 Vietnam Student Mathematics Olympiad</div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-year">2024</span>
+                    <div class="achievement-text"><strong>Participant</strong> – 2024 Vietnam Student Mathematics Olympiad</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research / Academic Programs -->
+        <div class="achievement-group">
+            <p class="achievement-group-title"><i class="fa-solid fa-graduation-cap fa-xs"></i>&nbsp; Research &amp; Academic Programs</p>
+            <div class="achievement-list">
+                <div class="achievement-item">
+                    <span class="achievement-year">2025</span>
+                    <div class="achievement-text">
+                        <strong>Participant (Partially Funded) – COMOSA 2025: Summer School on Optimization and Simulation</strong><br>
+                        Funded by the <em>Vietnam Institute for Advanced Study in Mathematics (VIASM)</em>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ─── SKILLS ─── -->
+    <section class="fade-in" id="skills">
+        <div class="section-header">
+            <div class="section-icon icon-green"><i class="fa-solid fa-code"></i></div>
+            <h2 class="section-title">Computer Skills</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-label"><i class="fa-solid fa-terminal"></i>Programming Languages</div>
+                <div class="skill-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">MATLAB</span>
+                    <span class="tag">Bash</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-label"><i class="fa-solid fa-brain"></i>ML &amp; DL Frameworks</div>
+                <div class="skill-tags">
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">Keras</span>
+                    <span class="tag">scikit-learn</span>
+                    <span class="tag">XGBoost</span>
+                    <span class="tag">LightGBM</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-label"><i class="fa-solid fa-robot"></i>LLMs &amp; NLP</div>
+                <div class="skill-tags">
+                    <span class="tag">HuggingFace</span>
+                    <span class="tag">LoRA/QLoRA</span>
+                    <span class="tag">PEFT</span>
+                    <span class="tag">Unsloth</span>
+                    <span class="tag">RAG</span>
+                    <span class="tag">FAISS</span>
+                    <span class="tag">ChromaDB</span>
+                    <span class="tag">Prompt Eng.</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-label"><i class="fa-solid fa-chart-line"></i>Data Analysis</div>
+                <div class="skill-tags">
+                    <span class="tag">NumPy</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">SciPy</span>
+                    <span class="tag">Feature Eng.</span>
+                    <span class="tag">F1/AUC-ROC</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-label"><i class="fa-solid fa-database"></i>Databases &amp; APIs</div>
+                <div class="skill-tags">
+                    <span class="tag">MySQL</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Flask</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-label"><i class="fa-brands fa-docker"></i>MLOps &amp; DevOps</div>
+                <div class="skill-tags">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Git/GitHub</span>
+                    <span class="tag">ONNX</span>
+                    <span class="tag">CI/CD</span>
+                    <span class="tag">Linux/Ubuntu</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-label"><i class="fa-solid fa-square-root-variable"></i>Mathematics</div>
+                <div class="skill-tags">
+                    <span class="tag">Linear Algebra</span>
+                    <span class="tag">Calculus</span>
+                    <span class="tag">Probability</span>
+                    <span class="tag">Statistics</span>
+                    <span class="tag">Algorithms</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-label"><i class="fa-solid fa-file-lines"></i>Typesetting</div>
+                <div class="skill-tags">
+                    <span class="tag">LaTeX</span>
+                    <span class="tag">Beamer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── REFEREES ─── -->
+    <section class="fade-in" id="referees">
+        <div class="section-header">
+            <div class="section-icon icon-purple"><i class="fa-solid fa-address-card"></i></div>
+            <h2 class="section-title">Referees</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="referees-grid">
+            <div class="referee-card">
+                <div class="referee-name">PhD. Phan The Duy</div>
+                <div class="referee-org">
+                    Information Security Laboratory (InSecLab)<br>
+                    University of Information Technology, VNU-HCMC
+                </div>
+                <div class="referee-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:ptduy@uit.edu.vn">ptduy@uit.edu.vn</a>
+                </div>
+            </div>
+
+            <div class="referee-card">
+                <div class="referee-name">PhD. Xuan The Tran</div>
+                <div class="referee-org">
+                    GrapheneX–UTS Human-centric AI Centre (HAI)<br>
+                    University of Technology Sydney (UTS)
+                </div>
+                <div class="referee-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:contact@anchiste.com">contact@anchiste.com</a>
+                </div>
+            </div>
+
+            <div class="referee-card">
+                <div class="referee-name">MS. Pham Quoc Phuong</div>
+                <div class="referee-org">
+                    HUTECH Institute of Engineering<br>
+                    Electrical–Electronics Department
+                </div>
+                <div class="referee-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:phuongpq@hutech.edu.vn">phuongpq@hutech.edu.vn</a>
+                </div>
+            </div>
+
+            <div class="referee-card">
+                <div class="referee-name">PhD. Viet Anh Hoang</div>
+                <div class="referee-org">
+                    Energy and Environmental Technology Division<br>
+                    Vietnam–Korea Institute of Science and Technology
+                </div>
+                <div class="referee-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:haviet@most.gov.vn">haviet@most.gov.vn</a>
+                </div>
+            </div>
+
+            <div class="referee-card">
+                <div class="referee-name">PhD. Quoc Thien Pham</div>
+                <div class="referee-org">
+                    HUTECH Institute of Engineering<br>
+                    HUTECH University
+                </div>
+                <div class="referee-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:pthien0288@gmail.com">pthien0288@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+    <p>
+        © 2025 Thien Nhan Vo · HUTECH University · 
+        <a href="mailto:thiennhan.math@gmail.com">thiennhan.math@gmail.com</a>
+    </p>
+    <p style="margin-top:6px; font-size:12px;">Last updated: June 2026</p>
+</footer>
+
+<!-- ============================================================
+     SCROLL ANIMATIONS
+============================================================ -->
+<script>
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        },
+        { threshold: 0.08 }
+    );
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id], div[id="about"]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const navObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    const match = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+                    if (match) match.classList.add('active');
+                }
+            });
+        },
+        { rootMargin: '-40% 0px -55% 0px' }
+    );
+
+    sections.forEach(s => navObserver.observe(s));
+</script>
+
+</body>
+</html>
