@@ -863,13 +863,13 @@
         /* ============================================================
            PUBLICATIONS
         ============================================================ */
-        .pub-list {
+        .paper-list {
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
 
-        .pub-card {
+        .paper-card {
             background: #ffffff;
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
@@ -880,7 +880,7 @@
             overflow: hidden;
         }
 
-        .pub-card::before {
+        .paper-card::before {
             content: '';
             position: absolute;
             left: 0; top: 0; bottom: 0;
@@ -890,27 +890,27 @@
             transition: opacity .25s;
         }
 
-        .pub-card.journal::before  { background: linear-gradient(180deg, #f6c90e, #f6ad55); }
-        .pub-card.conference::before { background: linear-gradient(180deg, #63b3ed, #76e4f7); }
-        .pub-card.preprint::before  { background: linear-gradient(180deg, #b794f4, #fc8181); }
+        .paper-card.journal::before  { background: linear-gradient(180deg, #f6c90e, #f6ad55); }
+        .paper-card.conference::before { background: linear-gradient(180deg, #63b3ed, #76e4f7); }
+        .paper-card.preprint::before  { background: linear-gradient(180deg, #b794f4, #fc8181); }
 
-        .pub-card:hover {
+        .paper-card:hover {
             border-color: var(--border-accent);
             background: var(--bg-card-hover);
             transform: translateY(-2px);
             box-shadow: var(--shadow-card), var(--shadow-glow);
         }
 
-        .pub-card:hover::before { opacity: 1; }
+        .paper-card:hover::before { opacity: 1; }
 
-        .pub-top {
+        .paper-top {
             display: flex;
             align-items: flex-start;
             gap: 14px;
             margin-bottom: 10px;
         }
 
-        .pub-type-badge {
+        .paper-type-badge {
             font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
@@ -926,14 +926,14 @@
         .badge-conference { background: rgba(59,130,246,0.10);  color: #2563eb; border: 1px solid rgba(59,130,246,0.25); }
         .badge-preprint   { background: rgba(139,92,246,0.10); color: #7c3aed; border: 1px solid rgba(139,92,246,0.25); }
 
-        .pub-title {
+        .paper-title {
             font-size: 15px;
             font-weight: 700;
             color: var(--text-primary);
             line-height: 1.45;
         }
 
-        .pub-authors {
+        .paper-authors {
             font-size: 13px;
             color: var(--text-secondary);
             margin-top: 6px;
@@ -941,25 +941,25 @@
             line-height: 1.6;
         }
 
-        .pub-authors .me {
+        .paper-authors .me {
             color: var(--accent-cyan);
             font-weight: 600;
         }
 
-        .pub-venue {
+        .paper-venue {
             font-size: 13px;
             font-style: italic;
             color: var(--text-muted);
             margin-bottom: 12px;
         }
 
-        .pub-venue strong {
+        .paper-venue strong {
             color: var(--accent-orange);
             font-style: normal;
             font-weight: 600;
         }
 
-        .pub-note {
+        .paper-note {
             display: inline-flex;
             align-items: center;
             gap: 5px;
@@ -973,7 +973,7 @@
             margin-bottom: 12px;
         }
 
-        .pub-links {
+        .paper-links {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
@@ -982,7 +982,7 @@
             border-top: 1px solid var(--border);
         }
 
-        .pub-link-btn {
+        .paper-link-btn {
             display: inline-flex;
             align-items: center;
             gap: 5px;
@@ -996,14 +996,14 @@
             transition: all .2s;
         }
 
-        .pub-link-btn:hover {
+        .paper-link-btn:hover {
             border-color: var(--accent-blue);
             color: var(--accent-blue);
             background: rgba(59,130,246,0.06);
             transform: translateY(-1px);
         }
 
-        .pub-link-btn i { font-size: 12px; }
+        .paper-link-btn i { font-size: 12px; }
 
         /* ============================================================
            REFEREES
@@ -1456,49 +1456,49 @@
             <div class="section-line"></div>
         </div>
 
-        <div class="pub-list">
+        <div class="paper-list">
 
             <!-- Paper 1: Journal – Annals of Mathematics -->
-            <div class="pub-card journal">
-                <div class="pub-top">
-                    <span class="pub-type-badge badge-journal">Journal</span>
+            <div class="paper-card journal">
+                <div class="paper-top">
+                    <span class="paper-type-badge badge-journal">Journal</span>
                     <div>
-                        <div class="pub-title">
+                        <div class="paper-title">
                             Existence of Zeros Near the Origin for Hypergraph Independence Polynomials: Applications and Variance Analysis
                         </div>
                     </div>
                 </div>
-                <div class="pub-note"><i class="fa-solid fa-circle-check"></i> Accepted, 2026</div>
-                <div class="pub-authors">
+                <div class="paper-note"><i class="fa-solid fa-circle-check"></i> Accepted, 2026</div>
+                <div class="paper-authors">
                     <span class="me">Thien Nhan Vo</span> et al.
                 </div>
-                <div class="pub-venue">
+                <div class="paper-venue">
                     <strong>Annals of Mathematics</strong>, 2026
                 </div>
             </div>
 
             <!-- Paper 2: Conference – ICCE 2026 -->
-            <div class="pub-card conference">
-                <div class="pub-top">
-                    <span class="pub-type-badge badge-conference">Conference</span>
+            <div class="paper-card conference">
+                <div class="paper-top">
+                    <span class="paper-type-badge badge-conference">Conference</span>
                     <div>
-                        <div class="pub-title">
+                        <div class="paper-title">
                             CombinedCNN: Lightweight Spatial-Temporal Attention Network for EEG Intent Recognition
                         </div>
                     </div>
                 </div>
-                <div class="pub-note"><i class="fa-solid fa-party-horn"></i> Accepted at ICCE 2026 🎉</div>
-                <div class="pub-authors">
+                <div class="paper-note"><i class="fa-solid fa-party-horn"></i> Accepted at ICCE 2026 🎉</div>
+                <div class="paper-authors">
                     <span class="me">Thien Nhan Vo</span> et al.
                 </div>
-                <div class="pub-venue">
+                <div class="paper-venue">
                     <strong>IEEE International Conference on Consumer Electronics (ICCE) 2026</strong><br>
                     <span style="font-style:normal;color:var(--accent-purple);font-size:12px;">
                         <i class="fa-solid fa-star fa-xs"></i>
                         Selected for the Special Session on <em>Intelligent Multimodal Perception and Cognitive Engineering</em>
                     </span>
                 </div>
-                <div class="pub-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
+                <div class="paper-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
                     <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px;">
                         <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(139,92,246,0.09);border:1px solid rgba(139,92,246,0.22);color:#7c3aed;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
                             <i class="fa-solid fa-layer-group fa-xs"></i> Joint Spatial–Temporal CNN + Multi-Head Attention
@@ -1518,53 +1518,53 @@
             </div>
 
             <!-- Paper 3: Preprint – arXiv EEG Survey -->
-            <div class="pub-card preprint">
-                <div class="pub-top">
-                    <span class="pub-type-badge badge-preprint">Preprint</span>
+            <div class="paper-card preprint">
+                <div class="paper-top">
+                    <span class="paper-type-badge badge-preprint">Preprint</span>
                     <div>
-                        <div class="pub-title">
+                        <div class="paper-title">
                             Inter- and Intra-Subject Variability in EEG: A Systematic Survey
                         </div>
                     </div>
                 </div>
-                <div class="pub-authors">
+                <div class="paper-authors">
                     Xuan-The Tran, <span class="me">Thien-Nhan Vo</span>, Son-Tung Vu, Thoa-Thi Tran,
                     Manh-Dat Nguyen, Thomas Do, Chin-Teng Lin
                 </div>
-                <div class="pub-venue">
+                <div class="paper-venue">
                     <strong>arXiv</strong> · arXiv:2602.01019 [q-bio.NC] · 2026
                 </div>
-                <div class="pub-links">
-                    <a class="pub-link-btn" href="https://arxiv.org/abs/2602.01019" target="_blank" rel="noopener">
+                <div class="paper-links">
+                    <a class="paper-link-btn" href="https://arxiv.org/abs/2602.01019" target="_blank" rel="noopener">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv
                     </a>
-                    <a class="pub-link-btn" href="https://arxiv.org/pdf/2602.01019" target="_blank" rel="noopener">
+                    <a class="paper-link-btn" href="https://arxiv.org/pdf/2602.01019" target="_blank" rel="noopener">
                         <i class="fa-solid fa-file-pdf"></i> PDF
                     </a>
-                    <button class="pub-link-btn" onclick="navigator.clipboard.writeText('@misc{tran2026interintrasubjectvariabilityeeg,\n      title={Inter- and Intra-Subject Variability in EEG: A Systematic Survey}, \n      author={Xuan-The Tran and Thien-Nhan Vo and Son-Tung Vu and Thoa-Thi Tran and Manh-Dat Nguyen and Thomas Do and Chin-Teng Lin},\n      year={2026},\n      eprint={2602.01019},\n      archivePrefix={arXiv},\n      primaryClass={q-bio.NC},\n      url={https://arxiv.org/abs/2602.01019}\n}'); this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copied!'; setTimeout(()=>this.innerHTML='<i class=\'fa-solid fa-quote-right\'></i> BibTeX', 2000);" style="cursor:pointer;">
+                    <button class="paper-link-btn" onclick="navigator.clipboard.writeText('@misc{tran2026interintrasubjectvariabilityeeg,\n      title={Inter- and Intra-Subject Variability in EEG: A Systematic Survey}, \n      author={Xuan-The Tran and Thien-Nhan Vo and Son-Tung Vu and Thoa-Thi Tran and Manh-Dat Nguyen and Thomas Do and Chin-Teng Lin},\n      year={2026},\n      eprint={2602.01019},\n      archivePrefix={arXiv},\n      primaryClass={q-bio.NC},\n      url={https://arxiv.org/abs/2602.01019}\n}'); this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copied!'; setTimeout(()=>this.innerHTML='<i class=\'fa-solid fa-quote-right\'></i> BibTeX', 2000);" style="cursor:pointer;">
                         <i class="fa-solid fa-quote-right"></i> BibTeX
                     </button>
                 </div>
             </div>
 
             <!-- Paper 4: NeurIPS 2026 Workshop – TRDP-EEG -->
-            <div class="pub-card preprint">
-                <div class="pub-top">
-                    <span class="pub-type-badge badge-preprint">Workshop</span>
+            <div class="paper-card preprint">
+                <div class="paper-top">
+                    <span class="paper-type-badge badge-preprint">Workshop</span>
                     <div>
-                        <div class="pub-title">
+                        <div class="paper-title">
                             TRDP-EEG: Time-Resolved Decoding of Perceived and Imagined Visual Object States from EEG
                         </div>
                     </div>
                 </div>
-                <div class="pub-note"><i class="fa-solid fa-clock-rotate-left"></i> Under Review</div>
-                <div class="pub-authors">
+                <div class="paper-note"><i class="fa-solid fa-clock-rotate-left"></i> Under Review</div>
+                <div class="paper-authors">
                     <span class="me">Vo, T. N.</span>, Tran, X.-T.
                 </div>
-                <div class="pub-venue">
+                <div class="paper-venue">
                     <strong>NeurIPS 2026 Workshop</strong> · Under Review
                 </div>
-                <div class="pub-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
+                <div class="paper-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
                     <!-- Highlight chips -->
                     <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px;">
                         <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(139,92,246,0.09);border:1px solid rgba(139,92,246,0.22);color:#7c3aed;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
@@ -1585,56 +1585,56 @@
             </div>
 
             <!-- Paper 5: COMOSA 2026 – Dual Evaluation -->
-            <div class="pub-card conference">
-                <div class="pub-top">
-                    <span class="pub-type-badge badge-conference">Conference</span>
+            <div class="paper-card conference">
+                <div class="paper-top">
+                    <span class="paper-type-badge badge-conference">Conference</span>
                     <div>
-                        <div class="pub-title">
+                        <div class="paper-title">
                             Dual Evaluation of Purchase Prediction and Ranking in Vietnamese E-commerce
                         </div>
                     </div>
                 </div>
-                <div class="pub-note"><i class="fa-solid fa-clock-rotate-left"></i> Under Review</div>
-                <div class="pub-authors">
+                <div class="paper-note"><i class="fa-solid fa-clock-rotate-left"></i> Under Review</div>
+                <div class="paper-authors">
                     Ngo, Y. N., Huynh, N. N., Nguyen Bao, H., Truong, T. X., Mai, H.,
                     <span class="me">Vo, T. N.</span> <span style="font-size:11px;color:var(--text-muted);">(Research Advisor)</span>
                 </div>
-                <div class="pub-venue">
+                <div class="paper-venue">
                     <strong>COMOSA 2026</strong> · Under Review
                 </div>
             </div>
 
             <!-- Paper 6: arXiv – TinyCNNDeep -->
-            <div class="pub-card preprint">
-                <div class="pub-top">
-                    <span class="pub-type-badge badge-preprint">Preprint</span>
+            <div class="paper-card preprint">
+                <div class="paper-top">
+                    <span class="paper-type-badge badge-preprint">Preprint</span>
                     <div>
-                        <div class="pub-title">
+                        <div class="paper-title">
                             TinyCNNDeep: Lightweight Attention-Based CNN for EEG Classification of Eye States and Sleep Deprivation
                         </div>
                     </div>
                 </div>
-                <div class="pub-authors">
+                <div class="paper-authors">
                     <span class="me">Thien Nhan Vo</span>, Yen Nhi Tran Thi, Ngan Nguyen Xuan Phuong, Xuan-The Tran
                 </div>
-                <div class="pub-venue">
+                <div class="paper-venue">
                     <strong>arXiv</strong> · arXiv:2606.26506 [eess.SP] · 2026
                 </div>
-                <div class="pub-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
+                <div class="paper-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
                     A lightweight CNN combining residual learning with Squeeze-and-Excitation (SE) attention for
                     four-class EEG classification (normal/deprived × eyes-open/closed). Achieves <strong>83.69%</strong>
                     subject-wise mean accuracy on a 35-subject dataset, outperforming the strongest baseline (Random Forest,
                     47.66%) by <strong>+36.03 pp</strong>, using only 5 frontal–occipital EEG channels and an image-based
                     2D convolution representation.
                 </div>
-                <div class="pub-links">
-                    <a class="pub-link-btn" href="https://arxiv.org/abs/2606.26506" target="_blank" rel="noopener">
+                <div class="paper-links">
+                    <a class="paper-link-btn" href="https://arxiv.org/abs/2606.26506" target="_blank" rel="noopener">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv
                     </a>
-                    <a class="pub-link-btn" href="https://arxiv.org/pdf/2606.26506" target="_blank" rel="noopener">
+                    <a class="paper-link-btn" href="https://arxiv.org/pdf/2606.26506" target="_blank" rel="noopener">
                         <i class="fa-solid fa-file-pdf"></i> PDF
                     </a>
-                    <button class="pub-link-btn" onclick="navigator.clipboard.writeText('@misc{vo2026tinycnndeep,\n      title={TinyCNNDeep: Lightweight Attention-Based CNN for EEG Classification of Eye States and Sleep Deprivation},\n      author={Thien Nhan Vo and Yen Nhi Tran Thi and Ngan Nguyen Xuan Phuong and Xuan-The Tran},\n      year={2026},\n      eprint={2606.26506},\n      archivePrefix={arXiv},\n      primaryClass={eess.SP},\n      url={https://arxiv.org/abs/2606.26506}\n}'); this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copied!'; setTimeout(()=>this.innerHTML='<i class=\'fa-solid fa-quote-right\'></i> BibTeX', 2000);" style="cursor:pointer;">
+                    <button class="paper-link-btn" onclick="navigator.clipboard.writeText('@misc{vo2026tinycnndeep,\n      title={TinyCNNDeep: Lightweight Attention-Based CNN for EEG Classification of Eye States and Sleep Deprivation},\n      author={Thien Nhan Vo and Yen Nhi Tran Thi and Ngan Nguyen Xuan Phuong and Xuan-The Tran},\n      year={2026},\n      eprint={2606.26506},\n      archivePrefix={arXiv},\n      primaryClass={eess.SP},\n      url={https://arxiv.org/abs/2606.26506}\n}'); this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copied!'; setTimeout(()=>this.innerHTML='<i class=\'fa-solid fa-quote-right\'></i> BibTeX', 2000);" style="cursor:pointer;">
                         <i class="fa-solid fa-quote-right"></i> BibTeX
                     </button>
                 </div>
