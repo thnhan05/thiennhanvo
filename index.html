@@ -863,6 +863,21 @@
         /* ============================================================
            PUBLICATIONS
         ============================================================ */
+        .pub-group { margin-bottom: 32px; }
+
+        .pub-group-title {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            padding-left: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         .paper-list {
             display: flex;
             flex-direction: column;
@@ -1446,231 +1461,251 @@
             <div class="section-line"></div>
         </div>
 
-        <div class="paper-list">
+        <!-- ── Journal ── -->
+        <div class="pub-group">
+            <p class="pub-group-title"><i class="fa-solid fa-book fa-xs"></i>&nbsp; Journal Articles</p>
+            <div class="paper-list">
 
-            <!-- Paper 1: Journal – Annals of Mathematics -->
-            <div class="paper-card journal">
-                <div class="paper-top">
-                    <span class="paper-type-badge badge-journal">Journal</span>
-                    <div>
-                        <div class="paper-title">
-                            Existence of Zeros Near the Origin for Hypergraph Independence Polynomials: Applications and Variance Analysis
+                <!-- Paper 1: Journal – Annals of Mathematics -->
+                <div class="paper-card journal">
+                    <div class="paper-top">
+                        <span class="paper-type-badge badge-journal">Journal</span>
+                        <div>
+                            <div class="paper-title">
+                                Existence of Zeros Near the Origin for Hypergraph Independence Polynomials: Applications and Variance Analysis
+                            </div>
                         </div>
                     </div>
+                    <div class="paper-note"><i class="fa-solid fa-circle-check"></i> Accepted, 2026</div>
+                    <div class="paper-authors">
+                        <span class="me">Thien Nhan Vo</span> et al.
+                    </div>
+                    <div class="paper-venue">
+                        <strong>Annals of Mathematics</strong>, 2026
+                    </div>
                 </div>
-                <div class="paper-note"><i class="fa-solid fa-circle-check"></i> Accepted, 2026</div>
-                <div class="paper-authors">
-                    <span class="me">Thien Nhan Vo</span> et al.
-                </div>
-                <div class="paper-venue">
-                    <strong>Annals of Mathematics</strong>, 2026
-                </div>
-            </div>
 
-            <!-- Paper 2: Conference – ICCE 2026 -->
-            <div class="paper-card conference">
-                <div class="paper-top">
-                    <span class="paper-type-badge badge-conference">Conference</span>
-                    <div>
-                        <div class="paper-title">
-                            CombinedCNN: Lightweight Spatial-Temporal Attention Network for EEG Intent Recognition
-                        </div>
-                    </div>
-                </div>
-                <div class="paper-note"><i class="fa-solid fa-party-horn"></i> Accepted at ICCE 2026 🎉</div>
-                <div class="paper-authors">
-                    <span class="me">Thien Nhan Vo</span> et al.
-                </div>
-                <div class="paper-venue">
-                    <strong>IEEE International Conference on Consumer Electronics (ICCE) 2026</strong><br>
-                    <span style="font-style:normal;color:var(--accent-purple);font-size:12px;">
-                        <i class="fa-solid fa-star fa-xs"></i>
-                        Selected for the Special Session on <em>Intelligent Multimodal Perception and Cognitive Engineering</em>
-                    </span>
-                </div>
-                <div class="paper-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
-                    <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px;">
-                        <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(139,92,246,0.09);border:1px solid rgba(139,92,246,0.22);color:#7c3aed;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
-                            <i class="fa-solid fa-layer-group fa-xs"></i> Joint Spatial–Temporal CNN + Multi-Head Attention
-                        </span>
-                        <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(34,197,94,0.09);border:1px solid rgba(34,197,94,0.22);color:#15803d;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
-                            <i class="fa-solid fa-bullseye fa-xs"></i> Balanced Accuracy <strong>0.820</strong> · ITR 1.299 bits/min
-                        </span>
-                        <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(245,158,11,0.09);border:1px solid rgba(245,158,11,0.22);color:#b45309;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
-                            <i class="fa-solid fa-microchip fa-xs"></i> ~10× Fewer Parameters vs. Standard 2D CNN
-                        </span>
-                    </div>
-                    A lightweight BCI network that jointly models <strong>spatial electrode relationships</strong> (2D conv) and
-                    <strong>temporal event-related dynamics</strong> (1D conv) in a unified end-to-end pipeline with attention-based refinement.
-                    Evaluated on the RSVP-BCI benchmark, it challenges the complexity–performance trade-off:
-                    <strong>higher accuracy at a fraction of the compute</strong>.
-                </div>
             </div>
-
-            <!-- Paper 3: Preprint – arXiv EEG Survey -->
-            <div class="paper-card preprint">
-                <div class="paper-top">
-                    <span class="paper-type-badge badge-preprint">Preprint</span>
-                    <div>
-                        <div class="paper-title">
-                            Inter- and Intra-Subject Variability in EEG: A Systematic Survey
-                        </div>
-                    </div>
-                </div>
-                <div class="paper-authors">
-                    Xuan-The Tran, <span class="me">Thien-Nhan Vo</span>, Son-Tung Vu, Thoa-Thi Tran,
-                    Manh-Dat Nguyen, Thomas Do, Chin-Teng Lin
-                </div>
-                <div class="paper-venue">
-                    <strong>arXiv</strong> · arXiv:2602.01019 [q-bio.NC] · 2026
-                </div>
-                <div class="paper-links">
-                    <a class="paper-link-btn" href="https://arxiv.org/abs/2602.01019" target="_blank" rel="noopener">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv
-                    </a>
-                    <a class="paper-link-btn" href="https://arxiv.org/pdf/2602.01019" target="_blank" rel="noopener">
-                        <i class="fa-solid fa-file-pdf"></i> PDF
-                    </a>
-                    <button class="paper-link-btn" onclick="navigator.clipboard.writeText('@misc{tran2026interintrasubjectvariabilityeeg,\n      title={Inter- and Intra-Subject Variability in EEG: A Systematic Survey}, \n      author={Xuan-The Tran and Thien-Nhan Vo and Son-Tung Vu and Thoa-Thi Tran and Manh-Dat Nguyen and Thomas Do and Chin-Teng Lin},\n      year={2026},\n      eprint={2602.01019},\n      archivePrefix={arXiv},\n      primaryClass={q-bio.NC},\n      url={https://arxiv.org/abs/2602.01019}\n}'); this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copied!'; setTimeout(()=>this.innerHTML='<i class=\'fa-solid fa-quote-right\'></i> BibTeX', 2000);" style="cursor:pointer;">
-                        <i class="fa-solid fa-quote-right"></i> BibTeX
-                    </button>
-                </div>
-            </div>
-
-            <!-- Paper 4: NeurIPS 2026 Workshop – TRDP-EEG -->
-            <div class="paper-card preprint">
-                <div class="paper-top">
-                    <span class="paper-type-badge badge-preprint">Workshop</span>
-                    <div>
-                        <div class="paper-title">
-                            TRDP-EEG: Time-Resolved Decoding of Perceived and Imagined Visual Object States from EEG
-                        </div>
-                    </div>
-                </div>
-                <div class="paper-note"><i class="fa-solid fa-clock-rotate-left"></i> Under Review</div>
-                <div class="paper-authors">
-                    <span class="me">Vo, T. N.</span>, Tran, X.-T.
-                </div>
-                <div class="paper-venue">
-                    <strong>NeurIPS 2026 Workshop</strong> · Under Review
-                </div>
-                <div class="paper-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
-                    <!-- Highlight chips -->
-                    <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px;">
-                        <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(139,92,246,0.09);border:1px solid rgba(139,92,246,0.22);color:#7c3aed;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
-                            <i class="fa-solid fa-clock fa-xs"></i> 5 Temporal Windows · 100–700 ms
-                        </span>
-                        <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(34,197,94,0.09);border:1px solid rgba(34,197,94,0.22);color:#15803d;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
-                            <i class="fa-solid fa-arrow-trend-up fa-xs"></i> Peak Accuracy <strong>98.49%</strong>
-                        </span>
-                        <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(59,130,246,0.09);border:1px solid rgba(59,130,246,0.22);color:#1d4ed8;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
-                            <i class="fa-solid fa-brain fa-xs"></i> EEG-to-Image CNN · Perception vs. Imagination
-                        </span>
-                    </div>
-                    A time-resolved decoding framework for distinguishing <strong>Perception vs. Imagination</strong> of visual objects from EEG.
-                    Converts EEG channels into 2D time–channel images for lightweight CNN classification across five overlapping windows.
-                    Achieves up to <strong>98.49% mean accuracy</strong> (200–700 ms), substantially outperforming ML/DL baselines —
-                    revealing that discriminative neural signatures emerge strongly <strong>after 200 ms post-stimulus</strong>.
-                </div>
-            </div>
-
-            <!-- Paper 5: COMOSA 2026 – Dual Evaluation -->
-            <div class="paper-card conference">
-                <div class="paper-top">
-                    <span class="paper-type-badge badge-conference">Conference</span>
-                    <div>
-                        <div class="paper-title">
-                            Dual Evaluation of Purchase Prediction and Ranking in Vietnamese E-commerce
-                        </div>
-                    </div>
-                </div>
-                <div class="paper-note"><i class="fa-solid fa-clock-rotate-left"></i> Under Review</div>
-                <div class="paper-authors">
-                    Ngo, Y. N., Huynh, N. N., Nguyen Bao, H., Truong, T. X., Mai, H.,
-                    <span class="me">Vo, T. N.</span> <span style="font-size:11px;color:var(--text-muted);">(Research Advisor)</span>
-                </div>
-                <div class="paper-venue">
-                    <strong>COMOSA 2026</strong> · Under Review
-                </div>
-            </div>
-
-            <!-- Paper 6: arXiv – TinyCNNDeep -->
-            <div class="paper-card preprint">
-                <div class="paper-top">
-                    <span class="paper-type-badge badge-preprint">Preprint</span>
-                    <div>
-                        <div class="paper-title">
-                            TinyCNNDeep: Lightweight Attention-Based CNN for EEG Classification of Eye States and Sleep Deprivation
-                        </div>
-                    </div>
-                </div>
-                <div class="paper-authors">
-                    <span class="me">Thien Nhan Vo</span>, Yen Nhi Tran Thi, Ngan Nguyen Xuan Phuong, Xuan-The Tran
-                </div>
-                <div class="paper-venue">
-                    <strong>arXiv</strong> · arXiv:2606.26506 [eess.SP] · 2026
-                </div>
-                <div class="paper-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
-                    A lightweight CNN combining residual learning with Squeeze-and-Excitation (SE) attention for
-                    four-class EEG classification (normal/deprived × eyes-open/closed). Achieves <strong>83.69%</strong>
-                    subject-wise mean accuracy on a 35-subject dataset, outperforming the strongest baseline (Random Forest,
-                    47.66%) by <strong>+36.03 pp</strong>, using only 5 frontal–occipital EEG channels and an image-based
-                    2D convolution representation.
-                </div>
-                <div class="paper-links">
-                    <a class="paper-link-btn" href="https://arxiv.org/abs/2606.26506" target="_blank" rel="noopener">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv
-                    </a>
-                    <a class="paper-link-btn" href="https://arxiv.org/pdf/2606.26506" target="_blank" rel="noopener">
-                        <i class="fa-solid fa-file-pdf"></i> PDF
-                    </a>
-                    <button class="paper-link-btn" onclick="navigator.clipboard.writeText('@misc{vo2026tinycnndeep,\n      title={TinyCNNDeep: Lightweight Attention-Based CNN for EEG Classification of Eye States and Sleep Deprivation},\n      author={Thien Nhan Vo and Yen Nhi Tran Thi and Ngan Nguyen Xuan Phuong and Xuan-The Tran},\n      year={2026},\n      eprint={2606.26506},\n      archivePrefix={arXiv},\n      primaryClass={eess.SP},\n      url={https://arxiv.org/abs/2606.26506}\n}'); this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copied!'; setTimeout(()=>this.innerHTML='<i class=\'fa-solid fa-quote-right\'></i> BibTeX', 2000);" style="cursor:pointer;">
-                        <i class="fa-solid fa-quote-right"></i> BibTeX
-                    </button>
-                </div>
-            </div>
-
-            <!-- Paper 7: CSoNet 2026 – TriFuse-R -->
-            <div class="paper-card conference">
-                <div class="paper-top">
-                    <span class="paper-type-badge badge-conference">Conference</span>
-                    <div>
-                        <div class="paper-title">
-                            TriFuse-R: Reliability-Aware Multimodal Fusion for Disaster Damage Assessment
-                        </div>
-                    </div>
-                </div>
-                <div class="paper-note" style="background:rgba(59,130,246,0.10);border-color:rgba(59,130,246,0.25);color:#2563eb;">
-                    <i class="fa-solid fa-paper-plane"></i> Submitted · 2026
-                </div>
-                <div class="paper-authors">
-                    <span class="me">Thien Nhan, V.</span>*, Xuan Phuong, N., Huynh Ngoc, N., Truong Thanh, X., Thi Minh, T., Tran Dinh, T.
-                    <span style="font-size:11px;color:var(--text-muted);margin-left:4px;">(*corresponding author)</span>
-                </div>
-                <div class="paper-venue">
-                    <strong>CSoNet 2026</strong> · 15th International Conference on Computational Data and Social Networks<br>
-                    <span style="font-style:normal;color:var(--accent-purple);font-size:12px;">
-                        <i class="fa-solid fa-location-dot fa-xs"></i>
-                        Ho Chi Minh City, Vietnam · November 16–18, 2026
-                    </span>
-                </div>
-                <div class="paper-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
-                    <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px;">
-                        <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(59,130,246,0.09);border:1px solid rgba(59,130,246,0.22);color:#1d4ed8;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
-                            <i class="fa-solid fa-layer-group fa-xs"></i> Multimodal Fusion
-                        </span>
-                        <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(245,158,11,0.09);border:1px solid rgba(245,158,11,0.22);color:#b45309;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
-                            <i class="fa-solid fa-shield-halved fa-xs"></i> Reliability-Aware
-                        </span>
-                        <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(239,68,68,0.09);border:1px solid rgba(239,68,68,0.22);color:#b91c1c;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
-                            <i class="fa-solid fa-house-crack fa-xs"></i> Disaster Damage Assessment
-                        </span>
-                    </div>
-                    A reliability-aware trimodal fusion framework for disaster damage assessment, combining heterogeneous data sources with adaptive weighting based on per-modality confidence estimates. Designed to remain robust under real-world sensing conditions where individual modalities may be noisy or unavailable.
-                </div>
-            </div>
-
         </div>
+
+        <!-- ── Conference ── -->
+        <div class="pub-group">
+            <p class="pub-group-title"><i class="fa-solid fa-users fa-xs"></i>&nbsp; Conference Papers</p>
+            <div class="paper-list">
+
+                <!-- Paper 2: Conference – ICCE 2026 -->
+                <div class="paper-card conference">
+                    <div class="paper-top">
+                        <span class="paper-type-badge badge-conference">Conference</span>
+                        <div>
+                            <div class="paper-title">
+                                CombinedCNN: Lightweight Spatial-Temporal Attention Network for EEG Intent Recognition
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paper-note"><i class="fa-solid fa-party-horn"></i> Accepted at ICCE 2026 🎉</div>
+                    <div class="paper-authors">
+                        <span class="me">Thien Nhan Vo</span> et al.
+                    </div>
+                    <div class="paper-venue">
+                        <strong>IEEE International Conference on Consumer Electronics (ICCE) 2026</strong><br>
+                        <span style="font-style:normal;color:var(--accent-purple);font-size:12px;">
+                            <i class="fa-solid fa-star fa-xs"></i>
+                            Selected for the Special Session on <em>Intelligent Multimodal Perception and Cognitive Engineering</em>
+                        </span>
+                    </div>
+                    <div class="paper-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
+                        <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px;">
+                            <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(139,92,246,0.09);border:1px solid rgba(139,92,246,0.22);color:#7c3aed;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
+                                <i class="fa-solid fa-layer-group fa-xs"></i> Joint Spatial–Temporal CNN + Multi-Head Attention
+                            </span>
+                            <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(34,197,94,0.09);border:1px solid rgba(34,197,94,0.22);color:#15803d;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
+                                <i class="fa-solid fa-bullseye fa-xs"></i> Balanced Accuracy <strong>0.820</strong> · ITR 1.299 bits/min
+                            </span>
+                            <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(245,158,11,0.09);border:1px solid rgba(245,158,11,0.22);color:#b45309;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
+                                <i class="fa-solid fa-microchip fa-xs"></i> ~10× Fewer Parameters vs. Standard 2D CNN
+                            </span>
+                        </div>
+                        A lightweight BCI network that jointly models <strong>spatial electrode relationships</strong> (2D conv) and
+                        <strong>temporal event-related dynamics</strong> (1D conv) in a unified end-to-end pipeline with attention-based refinement.
+                        Evaluated on the RSVP-BCI benchmark, it challenges the complexity–performance trade-off:
+                        <strong>higher accuracy at a fraction of the compute</strong>.
+                    </div>
+                </div>
+
+                <!-- Paper 5: COMOSA 2026 – Dual Evaluation -->
+                <div class="paper-card conference">
+                    <div class="paper-top">
+                        <span class="paper-type-badge badge-conference">Conference</span>
+                        <div>
+                            <div class="paper-title">
+                                Dual Evaluation of Purchase Prediction and Ranking in Vietnamese E-commerce
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paper-note"><i class="fa-solid fa-clock-rotate-left"></i> Under Review</div>
+                    <div class="paper-authors">
+                        Ngo, Y. N., Huynh, N. N., Nguyen Bao, H., Truong, T. X., Mai, H.,
+                        <span class="me">Vo, T. N.</span> <span style="font-size:11px;color:var(--text-muted);">(Research Advisor)</span>
+                    </div>
+                    <div class="paper-venue">
+                        <strong>COMOSA 2026</strong> · Under Review
+                    </div>
+                </div>
+
+                <!-- Paper 7: CSoNet 2026 – TriFuse-R -->
+                <div class="paper-card conference">
+                    <div class="paper-top">
+                        <span class="paper-type-badge badge-conference">Conference</span>
+                        <div>
+                            <div class="paper-title">
+                                TriFuse-R: Reliability-Aware Multimodal Fusion for Disaster Damage Assessment
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paper-note" style="background:rgba(59,130,246,0.10);border-color:rgba(59,130,246,0.25);color:#2563eb;">
+                        <i class="fa-solid fa-paper-plane"></i> Submitted · 2026
+                    </div>
+                    <div class="paper-authors">
+                        <span class="me">Thien Nhan, V.</span>*, Xuan Phuong, N., Huynh Ngoc, N., Truong Thanh, X., Thi Minh, T., Tran Dinh, T.
+                        <span style="font-size:11px;color:var(--text-muted);margin-left:4px;">(*corresponding author)</span>
+                    </div>
+                    <div class="paper-venue">
+                        <strong>CSoNet 2026</strong> · 15th International Conference on Computational Data and Social Networks<br>
+                        <span style="font-style:normal;color:var(--accent-purple);font-size:12px;">
+                            <i class="fa-solid fa-location-dot fa-xs"></i>
+                            Ho Chi Minh City, Vietnam · November 16–18, 2026
+                        </span>
+                    </div>
+                    <div class="paper-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
+                        <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px;">
+                            <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(59,130,246,0.09);border:1px solid rgba(59,130,246,0.22);color:#1d4ed8;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
+                                <i class="fa-solid fa-layer-group fa-xs"></i> Multimodal Fusion
+                            </span>
+                            <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(245,158,11,0.09);border:1px solid rgba(245,158,11,0.22);color:#b45309;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
+                                <i class="fa-solid fa-shield-halved fa-xs"></i> Reliability-Aware
+                            </span>
+                            <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(239,68,68,0.09);border:1px solid rgba(239,68,68,0.22);color:#b91c1c;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
+                                <i class="fa-solid fa-house-crack fa-xs"></i> Disaster Damage Assessment
+                            </span>
+                        </div>
+                        A reliability-aware trimodal fusion framework for disaster damage assessment, combining heterogeneous data sources with adaptive weighting based on per-modality confidence estimates. Designed to remain robust under real-world sensing conditions where individual modalities may be noisy or unavailable.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ── Preprint & Workshop ── -->
+        <div class="pub-group">
+            <p class="pub-group-title"><i class="fa-solid fa-file-lines fa-xs"></i>&nbsp; Preprints &amp; Workshop Papers</p>
+            <div class="paper-list">
+
+                <!-- Paper 3: Preprint – arXiv EEG Survey -->
+                <div class="paper-card preprint">
+                    <div class="paper-top">
+                        <span class="paper-type-badge badge-preprint">Preprint</span>
+                        <div>
+                            <div class="paper-title">
+                                Inter- and Intra-Subject Variability in EEG: A Systematic Survey
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paper-authors">
+                        Xuan-The Tran, <span class="me">Thien-Nhan Vo</span>, Son-Tung Vu, Thoa-Thi Tran,
+                        Manh-Dat Nguyen, Thomas Do, Chin-Teng Lin
+                    </div>
+                    <div class="paper-venue">
+                        <strong>arXiv</strong> · arXiv:2602.01019 [q-bio.NC] · 2026
+                    </div>
+                    <div class="paper-links">
+                        <a class="paper-link-btn" href="https://arxiv.org/abs/2602.01019" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv
+                        </a>
+                        <a class="paper-link-btn" href="https://arxiv.org/pdf/2602.01019" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-file-pdf"></i> PDF
+                        </a>
+                        <button class="paper-link-btn" onclick="navigator.clipboard.writeText('@misc{tran2026interintrasubjectvariabilityeeg,\n      title={Inter- and Intra-Subject Variability in EEG: A Systematic Survey}, \n      author={Xuan-The Tran and Thien-Nhan Vo and Son-Tung Vu and Thoa-Thi Tran and Manh-Dat Nguyen and Thomas Do and Chin-Teng Lin},\n      year={2026},\n      eprint={2602.01019},\n      archivePrefix={arXiv},\n      primaryClass={q-bio.NC},\n      url={https://arxiv.org/abs/2602.01019}\n}'); this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copied!'; setTimeout(()=>this.innerHTML='<i class=\'fa-solid fa-quote-right\'></i> BibTeX', 2000);" style="cursor:pointer;">
+                            <i class="fa-solid fa-quote-right"></i> BibTeX
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Paper 4: NeurIPS 2026 Workshop – TRDP-EEG -->
+                <div class="paper-card preprint">
+                    <div class="paper-top">
+                        <span class="paper-type-badge badge-preprint">Workshop</span>
+                        <div>
+                            <div class="paper-title">
+                                TRDP-EEG: Time-Resolved Decoding of Perceived and Imagined Visual Object States from EEG
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paper-note"><i class="fa-solid fa-clock-rotate-left"></i> Under Review</div>
+                    <div class="paper-authors">
+                        <span class="me">Vo, T. N.</span>, Tran, X.-T.
+                    </div>
+                    <div class="paper-venue">
+                        <strong>NeurIPS 2026 Workshop</strong> · Under Review
+                    </div>
+                    <div class="paper-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
+                        <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px;">
+                            <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(139,92,246,0.09);border:1px solid rgba(139,92,246,0.22);color:#7c3aed;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
+                                <i class="fa-solid fa-clock fa-xs"></i> 5 Temporal Windows · 100–700 ms
+                            </span>
+                            <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(34,197,94,0.09);border:1px solid rgba(34,197,94,0.22);color:#15803d;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
+                                <i class="fa-solid fa-arrow-trend-up fa-xs"></i> Peak Accuracy <strong>98.49%</strong>
+                            </span>
+                            <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(59,130,246,0.09);border:1px solid rgba(59,130,246,0.22);color:#1d4ed8;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px;">
+                                <i class="fa-solid fa-brain fa-xs"></i> EEG-to-Image CNN · Perception vs. Imagination
+                            </span>
+                        </div>
+                        A time-resolved decoding framework for distinguishing <strong>Perception vs. Imagination</strong> of visual objects from EEG.
+                        Converts EEG channels into 2D time–channel images for lightweight CNN classification across five overlapping windows.
+                        Achieves up to <strong>98.49% mean accuracy</strong> (200–700 ms), substantially outperforming ML/DL baselines —
+                        revealing that discriminative neural signatures emerge strongly <strong>after 200 ms post-stimulus</strong>.
+                    </div>
+                </div>
+
+                <!-- Paper 6: arXiv – TinyCNNDeep -->
+                <div class="paper-card preprint">
+                    <div class="paper-top">
+                        <span class="paper-type-badge badge-preprint">Preprint</span>
+                        <div>
+                            <div class="paper-title">
+                                TinyCNNDeep: Lightweight Attention-Based CNN for EEG Classification of Eye States and Sleep Deprivation
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paper-authors">
+                        <span class="me">Thien Nhan Vo</span>, Yen Nhi Tran Thi, Ngan Nguyen Xuan Phuong, Xuan-The Tran
+                    </div>
+                    <div class="paper-venue">
+                        <strong>arXiv</strong> · arXiv:2606.26506 [eess.SP] · 2026
+                    </div>
+                    <div class="paper-abstract" style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:8px;padding:10px 14px;background:rgba(59,130,246,0.04);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;">
+                        A lightweight CNN combining residual learning with Squeeze-and-Excitation (SE) attention for
+                        four-class EEG classification (normal/deprived × eyes-open/closed). Achieves <strong>83.69%</strong>
+                        subject-wise mean accuracy on a 35-subject dataset, outperforming the strongest baseline (Random Forest,
+                        47.66%) by <strong>+36.03 pp</strong>, using only 5 frontal–occipital EEG channels and an image-based
+                        2D convolution representation.
+                    </div>
+                    <div class="paper-links">
+                        <a class="paper-link-btn" href="https://arxiv.org/abs/2606.26506" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv
+                        </a>
+                        <a class="paper-link-btn" href="https://arxiv.org/pdf/2606.26506" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-file-pdf"></i> PDF
+                        </a>
+                        <button class="paper-link-btn" onclick="navigator.clipboard.writeText('@misc{vo2026tinycnndeep,\n      title={TinyCNNDeep: Lightweight Attention-Based CNN for EEG Classification of Eye States and Sleep Deprivation},\n      author={Thien Nhan Vo and Yen Nhi Tran Thi and Ngan Nguyen Xuan Phuong and Xuan-The Tran},\n      year={2026},\n      eprint={2606.26506},\n      archivePrefix={arXiv},\n      primaryClass={eess.SP},\n      url={https://arxiv.org/abs/2606.26506}\n}'); this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copied!'; setTimeout(()=>this.innerHTML='<i class=\'fa-solid fa-quote-right\'></i> BibTeX', 2000);" style="cursor:pointer;">
+                            <i class="fa-solid fa-quote-right"></i> BibTeX
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </section>
 
     <!-- ─── ACADEMIC ACHIEVEMENTS ─── -->
