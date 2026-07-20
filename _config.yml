@@ -1,0 +1,206 @@
+# ============================================================
+# Site Settings
+# ============================================================
+locale                   : "en-US"
+site_theme               : "default"
+title                    : "Thien Nhan Vo"
+title_separator          : "–"
+name                     : &name "Thien Nhan Vo"
+description              : &description "Undergraduate Researcher in Robotics & AI at HUTECH University, researching LLMs, Privacy-Preserving AI, BCI, and Smart Contract Security."
+url                      : "https://thnhan05.github.io"
+baseurl                  : ""
+repository               : "thnhan05/thiennhanvo"
+
+# ============================================================
+# Site Author (sidebar)
+# ============================================================
+author:
+  name             : "Thien Nhan Vo"
+  avatar           : "profile.jpg"
+  bio              : "Undergraduate Researcher · Robotics & AI · HUTECH University"
+  location         : "Ho Chi Minh City, Vietnam"
+  employer         : "HUTECH University"
+  email            : "thiennhan.math@gmail.com"
+
+  # Academic websites
+  arxiv            : "https://arxiv.org/search/?searchtype=author&query=Vo%2C+Thien+Nhan"
+  cv               : "https://drive.google.com/file/d/1lYTNfEiSzK3xPLEJGyw9x3FHf5vQSop8/view?usp=sharing"
+  googlescholar    : "https://scholar.google.com/citations?user=ui-hZiEAAAAJ&hl=en"
+  orcid            : "https://orcid.org/0009-0006-1702-9661"
+  researchgate     : ""
+
+  # Repositories and software development
+  github           : "thnhan05"
+
+  # Social media
+  linkedin         : "thien-nhan-vo-0992032b7"
+
+# ============================================================
+# Reading Files
+# ============================================================
+include:
+  - .htaccess
+  - _pages
+
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - tmp
+  - _ap_tmp
+  - ap_scaffold.zip
+
+keep_files:
+  - .git
+  - .svn
+
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# ============================================================
+# Conversion
+# ============================================================
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# ============================================================
+# Markdown Processing
+# ============================================================
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# ============================================================
+# Collections
+# ============================================================
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  talks:
+    output: true
+    permalink: /:collection/:path/
+  teaching:
+    output: true
+    permalink: /:collection/:path/
+
+# ============================================================
+# Defaults
+# ============================================================
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+  # _publications
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: false
+
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
+      comment: false
+
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+
+# ============================================================
+# Sass
+# ============================================================
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# ============================================================
+# Outputting
+# ============================================================
+permalink: /:categories/:title/
+timezone: Asia/Ho_Chi_Minh
+
+# ============================================================
+# Pagination
+# ============================================================
+paginate: 5
+paginate_path: /page:num/
+
+# ============================================================
+# Plugins (GitHub Pages safe)
+# ============================================================
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jemoji
+
+# Archives — use layout-based archives (GitHub Pages safe)
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# ============================================================
+# HTML Compression
+# ============================================================
+compress_html:
+  clippings: all
+  ignore:
+    envs: development

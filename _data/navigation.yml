@@ -1,0 +1,12 @@
+# Main navigation links
+main:
+  - title: "About"
+    url: /
+  - title: "Research"
+    url: /research/
+  - title: "Publications"
+    url: /publications/
+  - title: "Achievements"
+    url: /achievements/
+  - title: "CV"
+    url: /cv/
