@@ -1,33 +1,38 @@
 /* ============================================================
-   THIEN NHAN VO — Minimal premium overrides
-   Loaded AFTER the Academic Pages base theme
+   Thien Nhan Vo — Ultra-minimal overrides
+   Only touches: fonts, accent colors, nav gradient, tables,
+   blockquotes, footer, code blocks. NOTHING else.
    ============================================================ */
 
-/* ── Google Fonts (Inter) ─────────────────────────────────── */
+/* ── Google Fonts ─────────────────────────────────────────── */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* ── Typography ───────────────────────────────────────────── */
+/* ── Global font ──────────────────────────────────────────── */
 body,
+.masthead,
 .page__content,
 .sidebar,
-.masthead {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-code, pre, kbd, .highlight {
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-}
+code, pre, kbd, samp, tt,
+.highlight { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+
+/* ── Background ───────────────────────────────────────────── */
+body { background-color: #f4f7ff; }
 
 /* ── Masthead ─────────────────────────────────────────────── */
 .masthead {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255,255,255,0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 1px 16px rgba(0,0,0,0.07);
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
-.site-title, .site-title:visited {
+.masthead .site-title,
+.masthead .site-title:visited {
   font-weight: 800;
   font-size: 1rem;
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
@@ -36,45 +41,33 @@ code, pre, kbd, .highlight {
   background-clip: text;
 }
 
-.greedy-nav {
-  background: transparent;
-}
+.greedy-nav { background: transparent; }
 
 .greedy-nav a {
   font-weight: 500;
   font-size: 0.875rem;
-  color: #475569;
-  border-radius: 6px;
-  transition: all 0.2s;
 }
 
-.greedy-nav a:hover {
+.greedy-nav a:hover,
+.greedy-nav a:focus {
   color: #3b82f6;
-  background: rgba(59,130,246,0.08);
 }
 
-/* ── Page body background ─────────────────────────────────── */
-body {
-  background-color: #f4f7ff;
-}
-
-/* ── Author sidebar ───────────────────────────────────────── */
+/* ── Author avatar — simple ring only, no background hacks ── */
 .author__avatar img {
   border-radius: 50%;
-  box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px rgba(59,130,246,0.35), 0 4px 20px rgba(59,130,246,0.18);
-  transition: transform 0.3s, box-shadow 0.3s;
-  object-position: center 15%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 3px #3b82f6, 0 4px 16px rgba(59,130,246,0.20);
+  transition: box-shadow 0.3s;
 }
 
 .author__avatar img:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px rgba(139,92,246,0.50), 0 8px 28px rgba(139,92,246,0.22);
+  box-shadow: 0 0 0 3px #8b5cf6, 0 6px 20px rgba(139,92,246,0.25);
 }
 
+/* ── Author info ──────────────────────────────────────────── */
 .author__name {
   font-weight: 800;
-  font-size: 1rem;
-  color: #0f172a;
   letter-spacing: -0.3px;
 }
 
@@ -84,18 +77,8 @@ body {
   line-height: 1.55;
 }
 
-.author__urls a {
-  font-size: 0.82rem;
-  font-weight: 500;
-  transition: all 0.18s;
-  border-radius: 6px;
-  padding: 3px 6px;
-}
-
 .author__urls a:hover {
-  background: rgba(59,130,246,0.08);
   color: #3b82f6;
-  padding-left: 10px;
 }
 
 /* ── Page title ───────────────────────────────────────────── */
@@ -104,32 +87,28 @@ body {
   font-weight: 800;
   letter-spacing: -0.5px;
   color: #0f172a;
-  border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 0.75rem;
-  margin-bottom: 1.5rem;
 }
 
-/* ── Headings in content ──────────────────────────────────── */
+/* ── Headings ─────────────────────────────────────────────── */
 .page__content h2 {
   font-weight: 700;
   font-size: 1.15rem;
   color: #0f172a;
-  margin-top: 2.5rem;
-  padding: 0.5rem 0.9rem;
+  margin-top: 2rem;
+  padding: 0.45rem 0.85rem;
   border-left: 3px solid #3b82f6;
   background: rgba(59,130,246,0.04);
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 7px 7px 0;
 }
 
 .page__content h3 {
   font-weight: 700;
-  font-size: 1rem;
   color: #0f172a;
-  margin-top: 1.75rem;
 }
 
-.page__content strong {
-  color: #0f172a;
+.page__content h4 {
+  font-weight: 600;
+  color: #3b82f6;
 }
 
 /* ── Links ────────────────────────────────────────────────── */
@@ -142,65 +121,59 @@ a:hover { color: #8b5cf6; }
 /* ── Blockquotes ──────────────────────────────────────────── */
 blockquote {
   background: rgba(139,92,246,0.04);
-  border-left-color: #8b5cf6;
+  border-left: 4px solid #8b5cf6;
   border-radius: 0 10px 10px 0;
+  padding: 1rem 1.25rem;
   font-style: italic;
   color: #475569;
-  padding: 1rem 1.25rem;
   margin: 1.25rem 0;
 }
 
-blockquote strong { color: #0f172a; font-style: normal; }
-
-blockquote footer,
-blockquote p:last-child:not(:first-child) {
-  font-size: 0.78rem;
+blockquote strong {
+  color: #0f172a;
   font-style: normal;
-  font-weight: 600;
-  color: #94a3b8;
-  margin-top: 0.5rem;
-  margin-bottom: 0;
 }
 
 /* ── Tables ───────────────────────────────────────────────── */
 .page__content table {
   border-collapse: collapse;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+  width: 100%;
   font-size: 0.875rem;
   margin: 1.5rem 0;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.page__content thead tr {
+.page__content table thead tr {
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
 }
 
-.page__content thead th {
+.page__content table thead th {
   color: #ffffff !important;
   font-weight: 600;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 1rem !important;
   border: none !important;
 }
 
-.page__content tbody tr {
+.page__content table tbody tr {
   background: #ffffff;
   border-bottom: 1px solid rgba(0,0,0,0.06) !important;
   transition: background 0.15s;
 }
 
-.page__content tbody tr:nth-child(even) {
+.page__content table tbody tr:nth-child(even) {
   background: rgba(59,130,246,0.025);
 }
 
-.page__content tbody tr:hover {
+.page__content table tbody tr:hover {
   background: rgba(59,130,246,0.06);
 }
 
-.page__content tbody td {
+.page__content table tbody td {
   padding: 0.65rem 1rem !important;
   color: #475569;
   border: none !important;
@@ -208,38 +181,32 @@ blockquote p:last-child:not(:first-child) {
   line-height: 1.6;
 }
 
+/* ── Code ─────────────────────────────────────────────────── */
+.highlight, pre {
+  border-radius: 10px;
+  font-size: 0.82rem;
+}
+
 /* ── Footer ───────────────────────────────────────────────── */
 .page__footer {
-  background: #1e1b4b;
-  color: rgba(255,255,255,0.5);
-  font-size: 0.78rem;
-  margin-top: 3rem;
+  background: #1e1b4b !important;
+  color: rgba(255,255,255,0.55) !important;
 }
 
 .page__footer a {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.75) !important;
 }
 
 .page__footer a:hover {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
-/* ── Medal badges ─────────────────────────────────────────── */
-.medal-gold   { color: #d97706; font-weight: 700; }
-.medal-silver { color: #64748b; font-weight: 700; }
-.medal-bronze { color: #92400e; font-weight: 700; }
-
-/* ── Code blocks ──────────────────────────────────────────── */
-.highlight, pre {
-  border-radius: 10px;
+/* ── Fade-in animation ────────────────────────────────────── */
+#main {
+  animation: fadeInUp 0.4s ease both;
 }
 
-/* ── Smooth page entry ────────────────────────────────────── */
-.page__content {
-  animation: fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
