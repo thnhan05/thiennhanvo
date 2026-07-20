@@ -8,7 +8,7 @@ title_separator          : "–"
 name                     : &name "Thien Nhan Vo"
 description              : &description "Undergraduate Researcher in Robotics & AI at HUTECH University, researching LLMs, Privacy-Preserving AI, BCI, and Smart Contract Security."
 url                      : "https://thnhan05.github.io"
-baseurl                  : ""
+baseurl                  : "/thiennhanvo"
 repository               : "thnhan05/thiennhanvo"
 
 # ============================================================
