@@ -1,0 +1,347 @@
+/* ======== RESET / BASE STYLES ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  a {
+    color: #0057b8;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #003d82;
+    text-decoration: underline;
+  }
+  
+  .intro-part p {
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+
+  .misc-part p {
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+
+  .name-title {
+    font-size: 30px;
+  }
+
+  .highlighted-text {
+    font-weight: 600;
+    color: #0057b8;
+  }
+  
+  body {
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.5;
+    background-color: #FFFFFF;
+    color: #333;
+    padding-top: 60px; /* to avoid content being hidden behind fixed header */
+  }
+  
+  /* ======== FIXED HEADER / NAVIGATION ======== */
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    z-index: 999;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    max-width: 842px;
+    margin: 0 auto;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+  
+  .nav-list li {
+    margin: 0 15px;
+  }
+  
+  .nav-list li a {
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    padding: 15px 10px;
+    display: block;
+    overflow: hidden;
+    transition: color 0.3s ease;
+  }
+
+  .nav-list li a::before {
+    content: "";
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    width: 85%;
+    height: 10%;
+    z-index: -1;
+    background: #0057b8;
+    transform: translate(-50%, -50%) scaleX(0); 
+    transform-origin: center;
+    transition: transform 0.2s ease-out;
+  }
+  
+  .nav-list li a:hover::before {
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+  
+  /* ======== SECTIONS ======== */
+  .section {
+    max-width: 842px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  /* Wrap photo and intro side-by-side */
+  .photo-intro-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: flex-start;
+  }
+  
+  /* Photo column */
+  .photo-part {
+    flex: 0 0 auto;
+    text-align: center;
+  }
+  
+  /* Intro column */
+  .intro-part {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  /* ======== SECTION TITLES WITH HIGHLIGHT ======== */
+  .section-title {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 40px;
+    text-align: center;
+    position: relative;
+    font-size: 23px;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  
+  /* The highlight block */
+  .section-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 90%;
+    width: 100%;
+    height: 20%;
+    background-color: #0057b8;
+    z-index: -1;
+  }
+
+  .no-highlight::before {
+    content: none !important;
+  }
+  
+  /* ======== PHOTO & SOCIAL ICONS ======== */
+  .photo-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-photo {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .social-icons a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .social-icons a:hover {
+    color: #0057b8;
+  }
+
+  /* ======== NEWS SECTION ======== */
+  .news-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .news-list li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    align-items: baseline;
+    border-left: 3px solid #0057b8;
+    padding-left: 12px;
+    line-height: 1.5;
+  }
+
+  .news-date {
+    font-size: 0.85rem;
+    color: #666;
+    white-space: nowrap;
+    min-width: 80px;
+    font-weight: 600;
+  }
+  
+  /* ======== PUBLICATIONS LIST ======== */
+  .publication-item {
+    margin-bottom: 22px;
+    line-height: 1.5;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .publication-item:last-child {
+    border-bottom: none;
+  }
+  
+  .pub-title {
+    margin: 0 0 4px;
+  }
+  
+  .pub-authors {
+    margin: 0 0 4px;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  .pub-venue {
+    margin: 0 0 4px;
+    color: #444;
+  }
+
+  .pub-links {
+    margin: 0 0 4px;
+    font-size: 0.9rem;
+  }
+
+  .pub-status {
+    display: inline-block;
+    margin: 0 0 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: #e8f0fe;
+    color: #1a56c4;
+  }
+
+  .pub-status.accepted {
+    background: #e6f4ea;
+    color: #1e7e34;
+  }
+
+  .pub-status.review {
+    background: #fff3cd;
+    color: #856404;
+  }
+
+  .pub-status.preprint {
+    background: #f3e8ff;
+    color: #6f42c1;
+  }
+
+  .pub-section-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0057b8;
+    margin: 28px 0 12px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  
+  /* ======== FOOTER ======== */
+  footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: #666;
+    background-color: #FFFFFF;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+  }
+  
+  /* ======== MEDIA QUERIES (RESPONSIVE) ======== */
+  @media (max-width: 768px) {
+    body,
+    footer {
+      font-size: 14px;
+    }
+
+    .section-title {
+      font-size: 20px;
+    }
+
+    .name-title {
+      font-size: 26px;
+    }
+
+    .section {
+      max-width: 100%;
+    }
+  
+    .photo-intro-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .photo-part,
+    .intro-part {
+      flex: none;
+      width: 100%;
+      text-align: center;
+    }
+
+    .intro-part p,
+    .misc-part p {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .news-list li {
+      flex-direction: column;
+      gap: 2px;
+    }
+  
+    .navbar {
+      max-width: 100%;
+    }
+  
+    .nav-list {
+      align-items: center;
+    }
+  
+    .nav-list li {
+      margin: 0 8px;
+    }
+  }
