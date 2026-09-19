@@ -305,9 +305,10 @@ body {
   text-decoration: none;
 }
 
-/* ======== NEWS & AWARDS SECTION ======== */
+/* ======== NEWS & AWARDS & SERVICES SECTION ======== */
 .news-list,
-.awards-list {
+.awards-list,
+.services-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -318,8 +319,10 @@ body {
 
 .news-item,
 .award-item,
+.service-item,
 .news-list li,
-.awards-list li {
+.awards-list li,
+.services-list li {
   list-style: none;
   display: flex;
   gap: 14px;
@@ -335,8 +338,10 @@ body {
 
 .news-item:hover,
 .award-item:hover,
+.service-item:hover,
 .news-list li:hover,
-.awards-list li:hover {
+.awards-list li:hover,
+.services-list li:hover {
   background: #ffffff;
   border-color: #dbe4f3;
   border-left-color: #003d82;
@@ -345,12 +350,13 @@ body {
 }
 
 .news-date,
-.award-date {
+.award-date,
+.service-role {
   font-size: 0.82rem;
   font-weight: 600;
   color: #0057b8;
   background: #edf4fc;
-  padding: 3px 10px;
+  padding: 3px 12px;
   border-radius: 12px;
   white-space: nowrap;
   min-width: 80px;
@@ -361,18 +367,21 @@ body {
 }
 
 .news-content,
-.award-content {
+.award-content,
+.service-content {
   flex: 1;
   color: #2d3748;
   font-size: 0.95rem;
 }
 
-.award-name {
+.award-name,
+.service-title {
   font-weight: 600;
   color: #1a202c;
 }
 
-.award-details {
+.award-details,
+.service-details {
   color: #4a5568;
   font-size: 0.9rem;
   margin-top: 2px;
@@ -526,15 +535,18 @@ footer {
 
   .news-item,
   .award-item,
+  .service-item,
   .news-list li,
-  .awards-list li {
+  .awards-list li,
+  .services-list li {
     flex-direction: column;
     gap: 6px;
     padding: 10px 12px;
   }
 
   .news-date,
-  .award-date {
+  .award-date,
+  .service-role {
     align-self: flex-start;
   }
 
