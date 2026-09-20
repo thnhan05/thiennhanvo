@@ -479,6 +479,71 @@ body {
   background: #edf2f7;
 }
 
+/* ======== REFEREES SECTION ======== */
+.referees-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.referee-card {
+  padding: 16px 18px;
+  background: #fafbfc;
+  border: 1px solid #edf2f7;
+  border-left: 3.5px solid #0057b8;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.referee-card:hover {
+  background: #ffffff;
+  border-color: #dbe4f3;
+  border-left-color: #003d82;
+  box-shadow: 0 4px 14px rgba(0, 87, 184, 0.08);
+  transform: translateY(-2px);
+}
+
+.referee-name {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.referee-org {
+  font-size: 0.9rem;
+  color: #4a5568;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.referee-email {
+  font-size: 0.88rem;
+  color: #0057b8;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 500;
+  margin-top: auto;
+  word-break: break-all;
+  transition: color 0.2s ease;
+}
+
+.referee-email:hover {
+  color: #003d82;
+  text-decoration: underline;
+}
+
+.referee-email i {
+  font-size: 0.85rem;
+}
+
 /* ======== FOOTER ======== */
 footer {
   text-align: center;
@@ -571,5 +636,10 @@ footer {
     padding: 6px 12px;
     font-size: 0.84rem;
     border-radius: 16px;
+  }
+
+  .referees-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
