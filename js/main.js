@@ -1,131 +1,118 @@
-// js/main.js
+/**
+ * Vo Thien Nhan — Personal Academic Website
+ * Interactions: Dark mode toggle, Smooth navigation & BibTeX toggles
+ */
 
-document.addEventListener('DOMContentLoaded', () => {
-  const navLinks = document.querySelectorAll('.nav-list li a');
-  const sections = [];
+(function () {
+  'use strict';
 
-  // Map links to section targets
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href && href.startsWith('#')) {
-      const target = document.querySelector(href);
-      if (target) {
-        sections.push({ link, target, id: href });
+  // 1. Dark Mode Theme Controller
+  const toggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (themeIcon) {
+        themeIcon.className = 'fa-solid fa-sun';
       }
-    }
-  });
-
-  let isClickScrolling = false;
-  let clickScrollTimeout = null;
-
-  function setActiveLink(activeLink) {
-    navLinks.forEach(l => l.classList.remove('active'));
-    if (activeLink) {
-      activeLink.classList.add('active');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (themeIcon) {
+        themeIcon.className = 'fa-solid fa-moon';
+      }
     }
   }
 
-  // Handle Tab Click
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      const href = link.getAttribute('href');
-      if (!href || !href.startsWith('#')) return;
-      e.preventDefault();
+  // Detect initial theme: saved in localStorage or system preference
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    applyTheme('dark');
+  }
 
-      const target = document.querySelector(href);
-      if (!target) return;
+  // Toggle button event listener
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  }
 
-      // 1. Create Ripple Effect at Click Coordinates
-      const rect = link.getBoundingClientRect();
-      const ripple = document.createElement('span');
-      ripple.classList.add('nav-ripple');
-      const size = Math.max(rect.width, rect.height) * 1.5;
-      ripple.style.width = ripple.style.height = `${size}px`;
-      ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
-      ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
-      link.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 600);
-
-      // 2. Add Pop Bounce Animation
-      link.classList.remove('tab-pop');
-      void link.offsetWidth; // Force reflow
-      link.classList.add('tab-pop');
-
-      // 3. Immediately set Active State
-      setActiveLink(link);
-      isClickScrolling = true;
-      clearTimeout(clickScrollTimeout);
-
-      // 4. Smooth Scroll with Fixed Header Offset
-      const headerOffset = 70;
-      let targetTop = 0;
-      if (href !== '#top') {
-        const rectTop = target.getBoundingClientRect().top;
-        targetTop = rectTop + window.pageYOffset - headerOffset;
+  // Listen to OS preference changes if user hasn't explicitly set a preference
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem('theme')) {
+        applyTheme(e.matches ? 'dark' : 'light');
       }
+    });
+  }
 
-      window.scrollTo({
-        top: Math.max(0, targetTop),
-        behavior: 'smooth'
-      });
+  // 2. Smooth Scrolling with Offset for Anchor Links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
 
-      // 5. Trigger Target Section Title Highlight Animation
-      const sectionTitle = target.querySelector('.section-title') || target;
-      if (sectionTitle) {
-        setTimeout(() => {
-          sectionTitle.classList.remove('section-highlight-title');
-          void sectionTitle.offsetWidth;
-          sectionTitle.classList.add('section-highlight-title');
-        }, 350);
+      const targetElem = document.querySelector(targetId);
+      if (targetElem) {
+        e.preventDefault();
+        const headerOffset = 70; // Header height offset
+        const elemPosition = targetElem.getBoundingClientRect().top;
+        const offsetPosition = elemPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        } else {
+          window.location.hash = targetId;
+        }
       }
-
-      // Re-enable scroll tracking after smooth scroll completes
-      clickScrollTimeout = setTimeout(() => {
-        isClickScrolling = false;
-      }, 750);
     });
   });
 
-  // Scrollspy: Automatically highlight active tab during manual scrolling
-  function updateActiveOnScroll() {
-    if (isClickScrolling) return;
+  // 3. BibTeX Accordion Toggle & Copy Functionality
+  document.querySelectorAll('.bibtex-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('data-target');
+      if (!targetId) return;
 
-    const scrollY = window.pageYOffset;
-    const headerOffset = 90;
-
-    // Check if near top
-    if (scrollY < 120) {
-      const topLink = document.querySelector('.nav-list li a[href="#top"]');
-      if (topLink) setActiveLink(topLink);
-      return;
-    }
-
-    // Check if scrolled near bottom of page
-    if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 50) {
-      const lastSection = sections[sections.length - 1];
-      if (lastSection) {
-        setActiveLink(lastSection.link);
-        return;
+      const bibtexBox = document.getElementById(targetId);
+      if (bibtexBox) {
+        const isShown = bibtexBox.classList.contains('show');
+        bibtexBox.classList.toggle('show');
+        this.setAttribute('aria-expanded', !isShown);
       }
-    }
+    });
+  });
 
-    // Find section currently in view
-    let currentLink = null;
-    for (const { link, target, id } of sections) {
-      if (id === '#top') continue;
-      const top = target.getBoundingClientRect().top + scrollY - headerOffset;
-      const height = target.offsetHeight;
-      if (scrollY >= top - 20 && scrollY < top + height) {
-        currentLink = link;
-        break;
-      }
-    }
+  document.querySelectorAll('.btn-copy-bibtex').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const codeElem = this.closest('.bibtex-box').querySelector('pre');
+      if (!codeElem) return;
 
-    if (currentLink) {
-      setActiveLink(currentLink);
-    }
-  }
+      const textToCopy = codeElem.innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalHtml = this.innerHTML;
+        this.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+        this.classList.add('copied');
+        setTimeout(() => {
+          this.innerHTML = originalHtml;
+          this.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy BibTeX: ', err);
+      });
+    });
+  });
 
-  window.addEventListener('scroll', updateActiveOnScroll, { passive: true });
-  updateActiveOnScroll(); // Initial call
-});
+})();

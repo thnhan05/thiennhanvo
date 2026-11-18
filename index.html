@@ -1,300 +1,682 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thien Nhan Vo</title>
-  <meta name="description" content="Personal academic website of Vo Thien Nhan – Undergraduate Researcher in Robotics & AI at HUTECH University, working on LLMs, Privacy-Preserving AI, BCI, and Smart Contract Security."/>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75px' x='5px' font-size='75'>🧠</text></svg>" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <meta charset="utf-8">
+  <title>Vo Thien Nhan | Homepage</title>
+  <meta name="description" content="Personal academic homepage of Vo Thien Nhan (Thien Nhan Vo) — Undergraduate Researcher in Robotics & AI at HUTECH University. Research in LLMs & Agentic Workflows for Smart Contract Security, Privacy-Preserving AI, and Brain–Computer Interfaces (BCI).">
+  <meta name="author" content="Vo Thien Nhan">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75px' x='5px' font-size='75'>🧠</text></svg>">
+
+  <!-- External Icon Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20261001" />
-</head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300..900;1,300..900&family=Parkinsans:wght@400..800&display=swap" rel="stylesheet">
 
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css?v=20261118">
+</head>
 <body>
 
-  <!-- ======== FIXED NAV BAR ======== -->
-  <header class="fixed-header">
-    <nav class="navbar">
-      <ul class="nav-list">
-        <li><a href="#news-section">News</a></li>
-        <li><a href="#awards-section">Awards &amp; Honors</a></li>
-        <li><a href="#publications-section">Publications</a></li>
-        <li><a href="#services-section">Academic Service</a></li>
-        <li><a href="#referees-section">Referees</a></li>
-        <li><a href="#top">Thien Nhan Vo</a></li>
-      </ul>
-    </nav>
-  </header>
+<main>
+  <div class="container">
 
-  <!-- ======== MAIN CONTENT ======== -->
-  <main>
-    <section id="top" class="section">
-      <h1 class="section-title no-highlight"><span class="name-title">
-        <span class="highlighted-text">Vo Thien Nhan</span>
-      </span></h1>
-    </section>
+    <!-- ===== Sticky Hero Header ===== -->
+    <header class="hero">
+      <div class="hero-header">
+        <div class="hero-info">
+          <h1>Vo Thien Nhan</h1>
+          <p class="subtitle">thiennhan.math <strong>[at]</strong> gmail <strong>[dot]</strong> com</p>
+        </div>
+        <nav class="nav-sections">
+          <a href="#about">About</a>
+          <a href="#news">News</a>
+          <a href="#publications">Publications</a>
+          <a href="#awards">Awards</a>
+          <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
+          <a href="#referees">Referees</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark / light mode">
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
 
-    <!-- ======== PHOTO + INTRO ======== -->
-    <section class="section photo-intro-container">
-      <!-- Photo Column -->
-      <div class="photo-part">
-        <img src="assets/images/photo.jpg" alt="Vo Thien Nhan Photo" class="profile-photo"/>
-        <div class="social-icons">
-          <!-- Email -->
-          <a href="mailto:thiennhan.math@gmail.com" target="_blank" title="Email">
-            <i class="fa-regular fa-envelope"></i>
-          </a>
+    <!-- ===== Status / Opportunity Banner ===== -->
+    <div class="status-banner">
+      <div class="status-badge">
+        <span class="beacon-dot"></span> Active Status
+      </div>
+      <p class="status-text">
+        <strong>Actively seeking Master/Ph.D. &amp; Research Internship positions for Fall 2026/2027!</strong><br>
+        Passionate about <em>Large Language Models &amp; Agentic Workflows for Smart Contract Security</em>, <em>Spiking Neural Networks &amp; Hyperspectral AI</em>, <em>Privacy-Preserving AI</em>, and <em>Brain–Computer Interfaces (BCI)</em>.
+        Please <a href="mailto:thiennhan.math@gmail.com">reach out to me</a> if you would like to discuss potential research collaborations or exciting openings!
+      </p>
+    </div>
 
-          <!-- Google Scholar -->
-          <a href="https://scholar.google.com/citations?user=ui-hZiEAAAAJ&hl=en" target="_blank" title="Google Scholar" style="font-size: 20px;">
-            <i class="ai ai-google-scholar"></i>
-          </a>
+    <!-- ===== Intro Section ===== -->
+    <section class="intro-header" id="about">
+      <div class="intro-content">
+        <div class="intro-text">
+          <h2 class="greeting">Hi, I'm Nhan! (Võ Thiện Nhân)</h2>
+          <p class="intro-bio">
+            I am a final-year undergraduate researcher in Robotics and Artificial Intelligence at
+            <a href="https://www.hutech.edu.vn/" target="_blank" rel="noopener noreferrer">HUTECH University</a> (Ho Chi Minh City University of Technology), Vietnam.
+            I am affiliated with the <a href="https://insec.uit.edu.vn/" target="_blank" rel="noopener noreferrer">Information Security Laboratory (InSec Lab)</a>
+            at the University of Information Technology (UIT), Vietnam National University, Ho Chi Minh City (VNU-HCM).
+          </p>
+          <p class="intro-bio">
+            My research centers on applying modern machine learning, intelligent perception, and security analytics to high-impact challenges.
+            Specifically, my current work focuses on <strong>Large Language Models (LLMs) &amp; Agentic Workflows</strong> for smart contract security (automated vulnerability detection &amp; LLM-augmented fuzzing),
+            <strong>Spiking Neural Networks (SNNs) &amp; Hyperspectral Remote Sensing</strong>,
+            <strong>Privacy-Preserving AI</strong>, and <strong>Brain–Computer Interfaces (BCI)</strong> for neural decoding.
+            My contributions have been accepted at premier venues and journals including <strong>Nature Food</strong> (Nature Portfolio, <strong class="award">IF: 24.7, Top 1%</strong> worldwide), <em>SOICT 2026</em> (Oral Presentation), <em>FAIR 2026</em>, <em>ISNST 2026</em>, and <em>VJSS-2026</em>.
+          </p>
+          <p class="intro-bio">
+            Deeply committed to the scientific community, I actively engage in peer review and educational outreach.
+            I serve as a Reviewer for <em>ACDSA 2027</em> (Rio de Janeiro, Brazil) and have contributed as a STEM Instructor at the
+            <em>Vietnam–Korea Institute of Science and Technology (VKIST)</em>.
+          </p>
+          <p class="intro-bio">
+            I am always enthusiastically open to research collaborations, academic discussions, and coffee chats!
+          </p>
 
-          <!-- arXiv -->
-          <a href="https://arxiv.org/search/?searchtype=author&query=Vo%2C+Thien+Nhan" target="_blank" title="arXiv" style="font-size: 20px;">
-            <i class="ai ai-arxiv"></i>
-          </a>
-
-          <!-- ORCID -->
-          <a href="https://orcid.org/0009-0006-1702-9661" target="_blank" title="ORCID" style="font-size: 20px;">
-            <i class="ai ai-orcid"></i>
-          </a>
-
-          <!-- GitHub -->
-          <a href="https://github.com/thnhan05" target="_blank" title="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/thien-nhan-vo-0992032b7/" target="_blank" title="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          
-          <!-- CV Link -->
-          <a href="https://drive.google.com/file/d/1nsukjE4eKQXtLeQmckSp7x3gOEiku2MO/view?usp=sharing" target="_blank" title="Curriculum Vitae" style="font-size: 19px;">
-            <strong>CV</strong>
-          </a>
+          <ul class="intro-links">
+            <li><a href="mailto:thiennhan.math@gmail.com"><i class="fa-solid fa-envelope"></i> <span>Email</span></a></li>
+            <li><a href="https://drive.google.com/file/d/1nsukjE4eKQXtLeQmckSp7x3gOEiku2MO/view?usp=sharing" target="_blank" rel="noopener noreferrer"><i class="ai ai-cv"></i> <span>CV</span></a></li>
+            <li><a href="https://scholar.google.com/citations?user=ui-hZiEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i> <span>Scholar</span></a></li>
+            <li><a href="https://arxiv.org/search/?searchtype=author&query=Vo%2C+Thien+Nhan" target="_blank" rel="noopener noreferrer"><i class="ai ai-arxiv"></i> <span>arXiv</span></a></li>
+            <li><a href="https://orcid.org/0009-0006-1702-9661" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i> <span>ORCID</span></a></li>
+            <li><a href="https://github.com/thnhan05" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span>GitHub</span></a></li>
+            <li><a href="https://www.linkedin.com/in/thien-nhan-vo-0992032b7/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span></a></li>
+          </ul>
+        </div>
+        <div class="intro-image">
+          <img src="assets/images/photo.jpg" alt="Vo Thien Nhan">
         </div>
       </div>
+    </section>
 
-      <div class="intro-part">
-        <p>
-          I am a final-year undergraduate researcher in Robotics and Artificial Intelligence at
-          <a href="https://www.hutech.edu.vn/" target="_blank">Ho Chi Minh City University of Technology</a> (HUTECH), Ho Chi Minh City, Vietnam.
-          I am affiliated with the Information Security Laboratory (InSec Lab) at the University of Information Technology (UIT), Vietnam National University, Ho Chi Minh City (VNU-HCM).
-        </p>
-        <p>
-          My research centers on applying modern machine learning, intelligent perception, and security analytics to real-world challenges.
-          Specifically, my current work focuses on <strong>Large Language Models (LLMs) &amp; Agentic Workflows</strong> for smart contract security (LLM-augmented fuzzing and automated vulnerability detection),
-          <strong>Privacy-Preserving AI</strong>, and <strong>Brain–Computer Interfaces (BCI)</strong> for neural decoding and EEG intent recognition.
-          My contributions have been accepted at venues such as <em>SOICT 2026</em> (Oral Presentation), <em>FAIR 2026</em>, <em>ISNST 2026</em>, and <em>VJSS-2026</em>.
-        </p>
-        <p>
-          Deeply committed to the academic community, I actively engage in peer review and educational outreach.
-          I serve as a Reviewer for <em>ACDSA 2027</em> and have contributed as a STEM Instructor at the
-          <em>Vietnam-Korea Institute of Science and Technology (VKIST)</em>.
-        </p>
+    <!-- ===== News Section ===== -->
+    <section class="section-block" id="news">
+      <h2>News</h2>
+      <div class="news-table-wrapper">
+        <table class="news-table">
+          <tr>
+            <td class="news-date"><span class="date-chip">Nov, 2026</span></td>
+            <td class="news-desc">🌟 <strong>Major Scientific Milestone!</strong> Our manuscript <em>"A-Eye Fruit: An Efficient Wavelet-Guided Spiking Neural Network for Hyperspectral Durian Sugar Content Prediction"</em> has been accepted for publication in <strong>Nature Food</strong> (Nature Portfolio, <strong class="award">IF: 24.7, Top 1%</strong> worldwide / Rank #1 in Food Science &amp; Technology)!</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Oct, 2026</span></td>
+            <td class="news-desc">🎉 <strong>TriFuse-R</strong> has been accepted for an <strong class="award">Oral Presentation</strong> and publication in the <strong>SOICT 2026</strong> proceedings! (Paper ID: 3550).</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Oct, 2026</span></td>
+            <td class="news-desc">🥉 <strong>Third Prize (Southern Regional Round - Category C)</strong> – <strong>National Youth AI Innovation Contest 2026</strong> (Cuộc thi Sáng tạo trẻ Quốc gia trong lĩnh vực Trí tuệ nhân tạo năm 2026), organized by the Center for Science, Technology and Young Talents Development (CYSTAD - Central Committee of the Youth Union), for project <em>"FRUITSCAN"</em> (Oct 22, 2026).</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Oct, 2026</span></td>
+            <td class="news-desc">🥈 <strong>Second Prize</strong> – <strong>The 7th HUIT Startup Competition 2026 (Student Category)</strong>, organized by Ho Chi Minh City University of Industry and Trade (HUIT) IEC, Tuổi Trẻ Newspaper &amp; National Innovation Center (NIC).</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Oct, 2026</span></td>
+            <td class="news-desc">🥈 <strong>Second Prize</strong> – <strong>Japan – Vietnam Startup Idea Competition (SJD TANQ 2026)</strong>, organized by Hanoi University of Industry (HaUI) &amp; TANQ SJD.</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Oct, 2026</span></td>
+            <td class="news-desc">🌿 Selected as an official <strong>Youth Delegate</strong> for <strong>LCOY Viet Nam 2026</strong> (Local Conference of Youth on Climate Change), organized by Youth Climate Action Network (YNet Vietnam / YOUNGO–UNFCCC).</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Oct, 2026</span></td>
+            <td class="news-desc">🥇 <strong>First Prize</strong> – <strong>The 9th Agricultural Entrepreneurship Competition 2026</strong>, organized by Nong Lam University Ho Chi Minh City (NLU), for the project <em>"Fruit Scan – Application of Hyperspectral Imaging (HSI) and AI in Fruit Quality Inspection and Disease/Fungus Detection"</em>.</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Oct, 2026</span></td>
+            <td class="news-desc">🎉 Abstract accepted for presentation at <strong>ISNST 2026</strong> (2026 International Symposium on Novel and Sustainable Technology, Tainan, Taiwan): <em>"Compact Hyperspectral Representations for Cherry Tomato Surface Symptoms: From Classification to Segmentation"</em>.</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Oct, 2026</span></td>
+            <td class="news-desc">🎓 Awarded the <strong>Talent Student Scholarship</strong> by <strong>HUTECH Institute of Engineering</strong>, Ho Chi Minh City University of Technology (HUTECH).</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Sep, 2026</span></td>
+            <td class="news-desc">🏆 <strong>Special Prize</strong> – <strong>InnoStar 2026</strong> (Student Startup Idea Competition).</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Sep, 2026</span></td>
+            <td class="news-desc">🌟 <strong>Potential Prize</strong> – <strong>VietFuture Awards 2026</strong> (organized by VINASA) for the project <em>"Development of an Intelligent Vision-Based Robotic Picking System for Warehouse Automation"</em> (Emerging Technologies Field).</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Sep, 2026</span></td>
+            <td class="news-desc">🍁 Awarded a <strong>Full Travel &amp; Accommodation Grant</strong> to attend the <strong>Autumn School on Applied Mathematics in Climate, Environment and Sustainable Development</strong> at Vietnam Institute for Advanced Study in Mathematics (VIASM), Hanoi.</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Sep, 2026</span></td>
+            <td class="news-desc">🎉 Two papers accepted at <strong>FAIR 2026</strong> (The 19th National Conference on Fundamental and Applied IT Research): one on RSVP Brain–Computer Interfaces and one on hyperspectral mineral alteration mapping.</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Sep, 2026</span></td>
+            <td class="news-desc">📝 Invited to serve as a <strong>Reviewer</strong> for the <strong>International Conference on Artificial Intelligence, Computer, Data Sciences, and Applications (ACDSA 2027)</strong>, Rio de Janeiro, Brazil.</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Sep, 2026</span></td>
+            <td class="news-desc">✈️ Selected for <strong>The NEXGen 2026 International Trip</strong> (Bangkok, Thailand) by New Energy Nexus Vietnam (Fully Funded).</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Sep, 2026</span></td>
+            <td class="news-desc">🎖️ <strong>Consolation Prize</strong> – <strong>Bach Khoa Innovation 2026 (University Category)</strong>, Ho Chi Minh City University of Technology (HCMUT) &amp; Embassy of France in Vietnam.</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Aug, 2026</span></td>
+            <td class="news-desc">🥈 <strong>Second Prize</strong> – <strong>AI Challenge 2026 (University Division)</strong>, National Scientific Conference on AI for Economics and Business (AI4Econ&amp;Biz 2026), Vietnam.</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Aug, 2026</span></td>
+            <td class="news-desc">🎓 Accepted to <strong>IACR-VIASM Summer School on Cryptography 2026</strong>, Hanoi, Vietnam.</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Jul, 2026</span></td>
+            <td class="news-desc">🥈 <strong>Second Prize</strong> &amp; 🥉 <strong>Third Prize</strong> at <strong>THINKATHON GREENOVATION 2026</strong> (UEH Mekong Campus).</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Jul, 2026</span></td>
+            <td class="news-desc">📄 arXiv preprint <a href="https://arxiv.org/abs/2606.26506" target="_blank" rel="noopener noreferrer">TinyCNNDeep</a> published: Lightweight Attention-Based CNN for EEG Classification.</td>
+          </tr>
+          <tr>
+            <td class="news-date"><span class="date-chip">Jun, 2026</span></td>
+            <td class="news-desc">👨‍🏫 Started STEM Instructor role at <strong>VKIST 2026</strong> (Vietnam–Korea Institute of Science and Technology).</td>
+          </tr>
+        </table>
       </div>
     </section>
 
-    <!-- ======== NEWS SECTION ======== -->
-    <section id="news-section" class="section">
-      <h2 class="section-title">News</h2>
-      <ul class="news-list">
-        <li class="news-item">
-          <span class="news-date">Oct 2026</span>
-          <div class="news-content">
-            🎉 <strong>TriFuse-R</strong> has been accepted for an <strong>Oral Presentation</strong> and publication in the proceedings of <strong>SOICT 2026</strong> (The 15th International Symposium on Information and Communication Technology, Paper ID: 3550)!
+    <!-- ===== Publications Section ===== -->
+    <section class="section-block" id="publications">
+      <h2>Publications</h2>
+
+      <!-- 1. Journal Articles -->
+      <h3 class="pub-category-title"><i class="fa-solid fa-book-journal-whills"></i> Journal Articles</h3>
+      <div class="publications-list">
+
+        <!-- Journal 1: Nature Food (Featured) -->
+        <article class="publication featured-publication">
+          <div class="pub-content">
+            <div class="pub-thumbnail">
+              <img src="assets/figures/a_eye_fruit.png" alt="A-Eye Fruit Nature Food">
+            </div>
+            <div class="pub-info">
+              <h3 class="pub-title">
+                A-Eye Fruit: An Efficient Wavelet-Guided Spiking Neural Network for Hyperspectral Durian Sugar Content Prediction
+              </h3>
+              <p class="pub-authors">
+                <strong>Thien Nhan Vo</strong>, Lu Xue, Rongxin Yin, Pangzhen Zhang
+              </p>
+              <p class="pub-venue">
+                <span class="pub-status-badge accepted"><i class="fa-solid fa-check"></i> Accepted</span>
+                <span class="pub-status-badge nature"><i class="fa-solid fa-crown"></i> Nature Portfolio</span>
+                <span class="pub-status-badge top1"><i class="fa-solid fa-fire"></i> Top 1% (Rank #1) &bull; IF: 24.7</span>
+                <em>Nature Food</em> (2026) &bull; 5-Year IF: 31.7
+              </p>
+              <p class="pub-note" style="font-size: 0.85rem; color: var(--color-muted); margin-bottom: 0.35rem; line-height: 1.45;">
+                <i class="fa-solid fa-star" style="color: var(--award-color);"></i> Academic development of the A-Eye Fruit project (awarded 20+ entrepreneurship &amp; innovation competitions). Supported by the Hyperspectral and Thermal Remote Sensing Laboratory (HyperSens).
+              </p>
+              <div class="pub-links">
+                <a href="mailto:thiennhan.math@gmail.com?subject=Inquiry:%20Nature%20Food%20Paper%20(A-Eye%20Fruit)"><i class="fa-solid fa-envelope"></i> Contact Authors</a>
+                <a href="#" class="bibtex-toggle-btn" data-target="bib-nature-food"><i class="fa-solid fa-quote-right"></i> BibTeX</a>
+              </div>
+              <div class="bibtex-box" id="bib-nature-food">
+                <button class="btn-copy-bibtex" title="Copy BibTeX"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre>@article{vo2026aeyefruit,
+  title={A-Eye Fruit: An Efficient Wavelet-Guided Spiking Neural Network for Hyperspectral Durian Sugar Content Prediction},
+  author={Vo, Thien Nhan and Xue, Lu and Yin, Rongxin and Zhang, Pangzhen},
+  journal={Nature Food},
+  publisher={Nature Portfolio},
+  year={2026},
+  note={Accepted, IF: 24.7, Top 1% (Rank 1/143)}
+}</pre>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Oct 2026</span>
-          <div class="news-content">
-            🥇 <strong>First Prize</strong> – <strong>The 9th Agricultural Entrepreneurship Competition 2026</strong>, organized by Nong Lam University Ho Chi Minh City (NLU), for the project <em>"Fruit Scan – Application of Hyperspectral Imaging (HSI) and AI in Fruit Quality Inspection and Disease/Fungus Detection"</em>
+        </article>
+
+        <!-- Journal 2 -->
+        <article class="publication">
+          <div class="pub-content">
+            <div class="pub-thumbnail">
+              <img src="assets/figures/eeg_privacy_real.png" alt="Adaptive Privacy Routing for EEG">
+            </div>
+            <div class="pub-info">
+              <h3 class="pub-title">Adaptive Privacy Routing for EEG Representation Protection via Proximal Policy Optimization</h3>
+              <p class="pub-authors">
+                <strong>Thien Nhan Vo</strong>, Phung Thi Hien, Xuan-The Tran
+              </p>
+              <p class="pub-venue">
+                <span class="pub-status-badge review"><i class="fa-solid fa-clock"></i> Under Review</span>
+                <em>Biomedical Signal Processing and Control</em> (Elsevier)
+              </p>
+              <div class="pub-links">
+                <a href="mailto:thiennhan.math@gmail.com?subject=Inquiry:%20Adaptive%20Privacy%20Routing%20Paper"><i class="fa-solid fa-envelope"></i> Request Draft</a>
+                <a href="#" class="bibtex-toggle-btn" data-target="bib-eeg-privacy"><i class="fa-solid fa-quote-right"></i> BibTeX</a>
+              </div>
+              <div class="bibtex-box" id="bib-eeg-privacy">
+                <button class="btn-copy-bibtex" title="Copy BibTeX"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre>@article{vo2026eegprivacy,
+  title={Adaptive Privacy Routing for EEG Representation Protection via Proximal Policy Optimization},
+  author={Vo, Thien Nhan and Phung, Thi Hien and Tran, Xuan-The},
+  journal={Biomedical Signal Processing and Control (Under Review)},
+  year={2026}
+}</pre>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Oct 2026</span>
-          <div class="news-content">
-            🎉 Abstract accepted for presentation at <strong>ISNST 2026</strong> (2026 International Symposium on Novel and Sustainable Technology, Tainan, Taiwan): <em>"Compact Hyperspectral Representations for Cherry Tomato Surface Symptoms: From Classification to Segmentation"</em>
+        </article>
+
+        <!-- Journal 3 -->
+        <article class="publication">
+          <div class="pub-content">
+            <div class="pub-thumbnail">
+              <img src="assets/figures/allencahn_real.png" alt="Allen-Cahn Equation Scheme">
+            </div>
+            <div class="pub-info">
+              <h3 class="pub-title">A Sharp Stabilized Semi-Implicit Scheme for the Allen–Cahn Equation: Discrete Invariant Regions, Energy Dissipation, and M-Matrix Contractivity</h3>
+              <p class="pub-authors">
+                <strong>Thien Nhan Vo</strong> et al.
+              </p>
+              <p class="pub-venue">
+                <span class="pub-status-badge review"><i class="fa-solid fa-clock"></i> Under Review</span>
+                <em>Applied Numerical Mathematics</em>
+              </p>
+              <div class="pub-links">
+                <a href="mailto:thiennhan.math@gmail.com?subject=Inquiry:%20Allen-Cahn%20Scheme%20Paper"><i class="fa-solid fa-envelope"></i> Request Draft</a>
+                <a href="#" class="bibtex-toggle-btn" data-target="bib-allencahn"><i class="fa-solid fa-quote-right"></i> BibTeX</a>
+              </div>
+              <div class="bibtex-box" id="bib-allencahn">
+                <button class="btn-copy-bibtex" title="Copy BibTeX"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre>@article{vo2026allencahn,
+  title={A Sharp Stabilized Semi-Implicit Scheme for the Allen--Cahn Equation: Discrete Invariant Regions, Energy Dissipation, and M-Matrix Contractivity},
+  author={Vo, Thien Nhan and others},
+  journal={Applied Numerical Mathematics (Under Review)},
+  year={2026}
+}</pre>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Oct 2026</span>
-          <div class="news-content">
-            🎓 Awarded the <strong>Talent Student Scholarship</strong> by <strong>HUTECH Institute of Engineering</strong>, Ho Chi Minh City University of Technology (HUTECH)
+        </article>
+
+        <!-- Journal 4 -->
+        <article class="publication">
+          <div class="pub-content">
+            <div class="pub-thumbnail">
+              <img src="assets/figures/eeg_variability.png" alt="Inter- and Intra-Subject Variability in EEG">
+            </div>
+            <div class="pub-info">
+              <h3 class="pub-title">Inter- and Intra-Subject Variability in EEG: A Review</h3>
+              <p class="pub-authors">
+                Xuan-The Tran, <strong>Thien-Nhan Vo</strong>, Son-Tung Vu, Thoa-Thi Tran, Manh-Dat Nguyen, Thomas Do, Chin-Teng Lin
+              </p>
+              <p class="pub-venue">
+                <span class="pub-status-badge review"><i class="fa-solid fa-clock"></i> Under Review</span>
+                <em>Springer Nature</em> &bull; Preprint: <em>arXiv:2602.01019 [q-bio.NC], 2026</em>
+              </p>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2602.01019" target="_blank" rel="noopener noreferrer"><i class="ai ai-arxiv"></i> arXiv</a>
+                <a href="https://arxiv.org/pdf/2602.01019" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-file-pdf"></i> PDF</a>
+                <a href="#" class="bibtex-toggle-btn" data-target="bib-eeg-variability"><i class="fa-solid fa-quote-right"></i> BibTeX</a>
+              </div>
+              <div class="bibtex-box" id="bib-eeg-variability">
+                <button class="btn-copy-bibtex" title="Copy BibTeX"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre>@article{tran2026eegvariability,
+  title={Inter- and Intra-Subject Variability in EEG: A Review},
+  author={Tran, Xuan-The and Vo, Thien-Nhan and Vu, Son-Tung and Tran, Thoa-Thi and Nguyen, Manh-Dat and Do, Thomas and Lin, Chin-Teng},
+  journal={arXiv preprint arXiv:2602.01019},
+  year={2026}
+}</pre>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Sep 2026</span>
-          <div class="news-content">
-            🏆 <strong>Special Prize</strong> – <strong>InnoStar 2026</strong> (Student Startup Idea Competition)
+        </article>
+
+      </div>
+
+      <!-- 2. Conference Papers -->
+      <h3 class="pub-category-title"><i class="fa-solid fa-users"></i> Conference Papers</h3>
+      <div class="publications-list">
+
+        <!-- Conference 1 -->
+        <article class="publication">
+          <div class="pub-content">
+            <div class="pub-thumbnail">
+              <img src="assets/figures/fair_rsvp_bci.png" alt="RSVP Brain Computer Interface">
+            </div>
+            <div class="pub-info">
+              <h3 class="pub-title">A Lightweight Spatial-Temporal Attention Network for Efficient EEG-Based Target Detection in RSVP Brain-Computer Interfaces</h3>
+              <p class="pub-authors">
+                <strong>Thien Nhan Vo</strong> et al.
+              </p>
+              <p class="pub-venue">
+                <span class="pub-status-badge accepted"><i class="fa-solid fa-check"></i> Accepted</span>
+                <strong>FAIR 2026</strong> &bull; <em>The 19th National Conference on Fundamental and Applied IT Research</em>, Ho Chi Minh City, Vietnam, October 2026.
+              </p>
+              <div class="pub-links">
+                <a href="mailto:thiennhan.math@gmail.com?subject=Inquiry:%20RSVP%20BCI%20Paper"><i class="fa-solid fa-envelope"></i> Contact Authors</a>
+                <a href="#" class="bibtex-toggle-btn" data-target="bib-fair-rsvp"><i class="fa-solid fa-quote-right"></i> BibTeX</a>
+              </div>
+              <div class="bibtex-box" id="bib-fair-rsvp">
+                <button class="btn-copy-bibtex" title="Copy BibTeX"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre>@inproceedings{vo2026fairbci,
+  title={A Lightweight Spatial-Temporal Attention Network for Efficient EEG-Based Target Detection in RSVP Brain-Computer Interfaces},
+  author={Vo, Thien Nhan and others},
+  booktitle={The 19th National Conference on Fundamental and Applied IT Research (FAIR'2026)},
+  year={2026}
+}</pre>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Sep 2026</span>
-          <div class="news-content">
-            🌟 <strong>Potential Prize</strong> – <strong>VietFuture Awards 2026</strong> (organized by VINASA) for the project <em>"Development of an Intelligent Vision-Based Robotic Picking System for Warehouse Automation"</em> (Emerging Technologies: Blockchain, Web3, AR/VR, Metaverse &amp; IoT Field)
+        </article>
+
+        <!-- Conference 2 -->
+        <article class="publication">
+          <div class="pub-content">
+            <div class="pub-thumbnail">
+              <img src="assets/figures/fair_hyperspectral.png" alt="Hyperspectral Mineral Mapping">
+            </div>
+            <div class="pub-info">
+              <h3 class="pub-title">Hyperspectral Mineral Alteration Mapping for Gold Exploration in Serra Branca Brazil</h3>
+              <p class="pub-authors">
+                <strong>Thien Nhan Vo</strong> et al.
+              </p>
+              <p class="pub-venue">
+                <span class="pub-status-badge accepted"><i class="fa-solid fa-check"></i> Accepted</span>
+                <strong>FAIR 2026</strong> &bull; <em>The 19th National Conference on Fundamental and Applied IT Research</em>, Ho Chi Minh City, Vietnam, October 2026.
+              </p>
+              <div class="pub-links">
+                <a href="mailto:thiennhan.math@gmail.com?subject=Inquiry:%20Hyperspectral%20Mapping%20Paper"><i class="fa-solid fa-envelope"></i> Contact Authors</a>
+                <a href="#" class="bibtex-toggle-btn" data-target="bib-fair-mineral"><i class="fa-solid fa-quote-right"></i> BibTeX</a>
+              </div>
+              <div class="bibtex-box" id="bib-fair-mineral">
+                <button class="btn-copy-bibtex" title="Copy BibTeX"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre>@inproceedings{vo2026fairmineral,
+  title={Hyperspectral Mineral Alteration Mapping for Gold Exploration in Serra Branca Brazil},
+  author={Vo, Thien Nhan and others},
+  booktitle={The 19th National Conference on Fundamental and Applied IT Research (FAIR'2026)},
+  year={2026}
+}</pre>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Sep 2026</span>
-          <div class="news-content">
-            🍁 Awarded a <strong>Full Travel &amp; Accommodation Grant</strong> to attend the <strong>Autumn School on Applied Mathematics in Climate, Environment and Sustainable Development</strong> (part of the <em>First UK–Vietnam Meeting on Mathematics for the Environment</em>) at the Vietnam Institute for Advanced Study in Mathematics (VIASM), Hanoi
+        </article>
+
+        <!-- Conference 3: TriFuse-R Accepted SOICT 2026 -->
+        <article class="publication">
+          <div class="pub-content">
+            <div class="pub-thumbnail">
+              <img src="assets/figures/trifuse_real.png" alt="TriFuse-R Multimodal Fusion">
+            </div>
+            <div class="pub-info">
+              <h3 class="pub-title">TriFuse-R: Reliability-Aware Multimodal Fusion for Disaster Damage Assessment</h3>
+              <p class="pub-authors">
+                Tu Hoang Thanh, <strong>Thien Nhan Vo</strong>, Thi Hien Phung, Ngan Nguyen Xuan Phuong, Ngoc Ngan Huynh, Thanh Xuan Truong
+              </p>
+              <p class="pub-venue">
+                <span class="pub-status-badge accepted"><i class="fa-solid fa-check"></i> Accepted</span>
+                <span class="pub-status-badge oral"><i class="fa-solid fa-microphone-lines"></i> Oral Presentation</span>
+                <strong>SOICT 2026</strong> &bull; <em>The 15th International Symposium on Information and Communication Technology</em> &bull; <em>Proceedings (Paper ID: 3550)</em>
+              </p>
+              <div class="pub-links">
+                <a href="mailto:thiennhan.math@gmail.com?subject=Inquiry:%20TriFuse-R%20Paper"><i class="fa-solid fa-envelope"></i> Contact Authors</a>
+                <a href="#" class="bibtex-toggle-btn" data-target="bib-trifuse"><i class="fa-solid fa-quote-right"></i> BibTeX</a>
+              </div>
+              <div class="bibtex-box" id="bib-trifuse">
+                <button class="btn-copy-bibtex" title="Copy BibTeX"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre>@inproceedings{tu2026trifuse,
+  title={TriFuse-R: Reliability-Aware Multimodal Fusion for Disaster Damage Assessment},
+  author={Tu, Hoang Thanh and Vo, Thien Nhan and Phung, Thi Hien and Nguyen, Xuan Phuong Ngan and Huynh, Ngoc Ngan and Truong, Thanh Xuan},
+  booktitle={Proceedings of the 15th International Symposium on Information and Communication Technology (SOICT)},
+  year={2026},
+  note={Oral Presentation, Paper ID: 3550}
+}</pre>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Sep 2026</span>
-          <div class="news-content">
-            🎉 Two papers accepted at <strong>FAIR 2026</strong> (The 19th National Conference on Fundamental and Applied IT Research): one on RSVP Brain–Computer Interfaces and one on hyperspectral mineral alteration mapping
+        </article>
+
+      </div>
+
+      <!-- 3. Abstract Presentations -->
+      <h3 class="pub-category-title"><i class="fa-solid fa-chalkboard-user"></i> Abstract Presentations &amp; Posters</h3>
+      <div class="publications-list">
+
+        <!-- Abstract 1 -->
+        <article class="publication">
+          <div class="pub-content">
+            <div class="pub-thumbnail">
+              <img src="assets/figures/fruit_setup_real.png" alt="Cherry Tomato Hyperspectral Diagnosis">
+            </div>
+            <div class="pub-info">
+              <h3 class="pub-title">Compact Hyperspectral Representations for Cherry Tomato Surface Symptoms: From Classification to Segmentation</h3>
+              <p class="pub-authors">
+                Quoc Thien Pham<sup>†</sup>, <strong>Thien Nhan Vo</strong>, Sheng-En Lu, and Nai-Shang Liou*
+              </p>
+              <p class="pub-venue">
+                <span class="pub-status-badge accepted"><i class="fa-solid fa-check"></i> Accepted</span>
+                <em>2026 International Symposium on Novel and Sustainable Technology (ISNST 2026)</em>, Tainan City, Taiwan, Oct 22–23, 2026. Accepted for Abstract Presentation.
+              </p>
+              <div class="pub-links">
+                <a href="mailto:thiennhan.math@gmail.com?subject=Inquiry:%20ISNST%202026%20Presentation"><i class="fa-solid fa-file-powerpoint"></i> Presentation</a>
+                <a href="#" class="bibtex-toggle-btn" data-target="bib-isnst"><i class="fa-solid fa-quote-right"></i> BibTeX</a>
+              </div>
+              <div class="bibtex-box" id="bib-isnst">
+                <button class="btn-copy-bibtex" title="Copy BibTeX"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre>@inproceedings{pham2026isnst,
+  title={Compact Hyperspectral Representations for Cherry Tomato Surface Symptoms: From Classification to Segmentation},
+  author={Pham, Quoc Thien and Vo, Thien Nhan and Lu, Sheng-En and Liou, Nai-Shang},
+  booktitle={2026 International Symposium on Novel and Sustainable Technology (ISNST 2026)},
+  year={2026}
+}</pre>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Sep 2026</span>
-          <div class="news-content">
-            📝 Invited to serve as a <strong>Reviewer</strong> for the <strong>International Conference on Artificial Intelligence, Computer, Data Sciences, and Applications (ACDSA 2027)</strong>, Rio de Janeiro, Brazil
+        </article>
+
+        <!-- Abstract 2 -->
+        <article class="publication">
+          <div class="pub-content">
+            <div class="pub-thumbnail">
+              <img src="assets/figures/wafer_defect.png" alt="Wafer Defect Inspection ViT">
+            </div>
+            <div class="pub-info">
+              <h3 class="pub-title">A Label-Efficient and Interpretable Framework for Automated Wafer Defect Inspection via Self-Supervised Vision Transformers and Active Learning</h3>
+              <p class="pub-authors">
+                <strong>Thien Nhan Vo</strong> et al.
+              </p>
+              <p class="pub-venue">
+                <span class="pub-status-badge accepted"><i class="fa-solid fa-check"></i> Accepted</span>
+                <em>Vietnam–Japan Semiconductor Symposium 2026 (VJSS-2026)</em>, Hanoi, Vietnam, September 2026. Accepted for Poster Presentation.
+              </p>
+              <div class="pub-links">
+                <a href="mailto:thiennhan.math@gmail.com?subject=Inquiry:%20VJSS%20Wafer%20Defect%20Poster"><i class="fa-solid fa-image"></i> Poster</a>
+                <a href="#" class="bibtex-toggle-btn" data-target="bib-vjss"><i class="fa-solid fa-quote-right"></i> BibTeX</a>
+              </div>
+              <div class="bibtex-box" id="bib-vjss">
+                <button class="btn-copy-bibtex" title="Copy BibTeX"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre>@inproceedings{vo2026vjss,
+  title={A Label-Efficient and Interpretable Framework for Automated Wafer Defect Inspection via Self-Supervised Vision Transformers and Active Learning},
+  author={Vo, Thien Nhan and others},
+  booktitle={Vietnam-Japan Semiconductor Symposium (VJSS-2026)},
+  year={2026}
+}</pre>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Sep 2026</span>
-          <div class="news-content">
-            ✈️ Selected for <strong>The NEXGen 2026 International Trip</strong> (Bangkok, Thailand) by New Energy Nexus Vietnam (Fully Funded)
+        </article>
+
+      </div>
+
+      <!-- 4. Preprints & Working Papers -->
+      <h3 class="pub-category-title"><i class="fa-solid fa-file-lines"></i> Preprints &amp; Working Papers</h3>
+      <div class="publications-list">
+
+        <!-- Preprint 1 -->
+        <article class="publication">
+          <div class="pub-content">
+            <div class="pub-thumbnail">
+              <img src="assets/figures/tinycnndeep_real.jpg" alt="TinyCNNDeep EEG Classification">
+            </div>
+            <div class="pub-info">
+              <h3 class="pub-title">TinyCNNDeep: Lightweight Attention-Based CNN for EEG Classification of Eye States and Sleep Deprivation</h3>
+              <p class="pub-authors">
+                <strong>Thien Nhan Vo</strong>, Yen Nhi Tran Thi, Ngan Nguyen Xuan Phuong, Xuan-The Tran
+              </p>
+              <p class="pub-venue">
+                <span class="pub-status-badge preprint"><i class="fa-solid fa-file-pdf"></i> arXiv Preprint</span>
+                <em>arXiv:2606.26506 [eess.SP], 2026</em>
+              </p>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2606.26506" target="_blank" rel="noopener noreferrer"><i class="ai ai-arxiv"></i> arXiv</a>
+                <a href="https://arxiv.org/pdf/2606.26506" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-file-pdf"></i> PDF</a>
+                <a href="#" class="bibtex-toggle-btn" data-target="bib-tinycnndeep"><i class="fa-solid fa-quote-right"></i> BibTeX</a>
+              </div>
+              <div class="bibtex-box" id="bib-tinycnndeep">
+                <button class="btn-copy-bibtex" title="Copy BibTeX"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre>@article{vo2026tinycnndeep,
+  title={TinyCNNDeep: Lightweight Attention-Based CNN for EEG Classification of Eye States and Sleep Deprivation},
+  author={Vo, Thien Nhan and Tran Thi, Yen Nhi and Nguyen Xuan Phuong, Ngan and Tran, Xuan-The},
+  journal={arXiv preprint arXiv:2606.26506},
+  year={2026}
+}</pre>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Sep 2026</span>
-          <div class="news-content">
-            🎖️ Consolation Prize – <strong>Bach Khoa Innovation 2026 (University Category)</strong>, Ho Chi Minh City University of Technology (HCMUT) &amp; Embassy of France in Vietnam
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Aug 2026</span>
-          <div class="news-content">
-            🥈 Second Prize – <strong>AI Challenge 2026 (University Division)</strong>, National Scientific Conference on AI for Economics and Business (AI4Econ&amp;Biz 2026), Vietnam
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Aug 2026</span>
-          <div class="news-content">
-            Accepted to <strong>IACR-VIASM Summer School on Cryptography 2026</strong>
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Jul 2026</span>
-          <div class="news-content">
-            🥈 Second Prize &amp; 🥉 Third Prize at <strong>THINKATHON GREENOVATION 2026</strong> (UEH Mekong Campus)
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Jul 2026</span>
-          <div class="news-content">
-            arXiv preprint <a href="https://arxiv.org/abs/2606.26506" target="_blank">TinyCNNDeep</a> published
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-date">Jun 2026</span>
-          <div class="news-content">
-            Started STEM Instructor role at <strong>VKIST 2026</strong>
-          </div>
-        </li>
-      </ul>
+        </article>
+
+      </div>
     </section>
 
-    <!-- ======== AWARDS & HONORS SECTION ======== -->
-    <section id="awards-section" class="section">
-      <h2 class="section-title">Awards &amp; Honors</h2>
+    <!-- ===== Awards & Honors Section ===== -->
+    <section class="section-block" id="awards">
+      <h2>Awards &amp; Honors</h2>
       <ul class="awards-list">
         <li class="award-item">
-          <span class="award-date">2026</span>
+          <span class="award-date"><span class="date-chip">2026</span></span>
+          <div class="award-content">
+            <span class="award-name">🥉 Third Prize (Category C - Southern Regional Round)</span> – <strong>National Youth AI Innovation Contest 2026</strong>
+            <div class="award-details">Cuộc thi Sáng tạo trẻ Quốc gia trong lĩnh vực Trí tuệ nhân tạo năm 2026 (Bảng C - Vòng Khu vực Miền Nam) &bull; Project: <em>FRUITSCAN</em> &bull; Center for Science, Technology and Young Talents Development (CYSTAD / Trung ương Đoàn TNCS Hồ Chí Minh) (Oct 22, 2026)</div>
+          </div>
+        </li>
+        <li class="award-item">
+          <span class="award-date"><span class="date-chip">2026</span></span>
+          <div class="award-content">
+            <span class="award-name">🥈 Second Prize</span> – <strong>The 7th HUIT Startup Competition 2026 (Student Category)</strong>
+            <div class="award-details">Cuộc thi HUIT Startup lần VII năm 2026 (Bảng Sinh viên) &bull; Ho Chi Minh City University of Industry and Trade (HUIT), Tuổi Trẻ Newspaper &amp; National Innovation Center (NIC) (Oct 2026)</div>
+          </div>
+        </li>
+        <li class="award-item">
+          <span class="award-date"><span class="date-chip">2026</span></span>
+          <div class="award-content">
+            <span class="award-name">🥈 Second Prize</span> – <strong>Japan – Vietnam Startup Idea Competition (SJD TANQ 2026)</strong>
+            <div class="award-details">Cuộc thi Ý tưởng Khởi nghiệp Nhật Bản - Việt Nam &bull; Hanoi University of Industry (HaUI) &amp; TANQ SJD (Oct 2026)</div>
+          </div>
+        </li>
+        <li class="award-item">
+          <span class="award-date"><span class="date-chip">2026</span></span>
+          <div class="award-content">
+            <span class="award-name">🌿 Official Youth Delegate</span> – <strong>LCOY Viet Nam 2026</strong>
+            <div class="award-details">Local Conference of Youth Viet Nam 2026 on Climate Change &bull; Youth Climate Action Network (YNet Vietnam) under YOUNGO (UNFCCC) (Oct 2026)</div>
+          </div>
+        </li>
+        <li class="award-item">
+          <span class="award-date"><span class="date-chip">2026</span></span>
           <div class="award-content">
             <span class="award-name">🥇 First Prize</span> – <strong>The 9th Agricultural Entrepreneurship Competition 2026</strong>
-            <div class="award-details">Project: <em>Fruit Scan – Application of Hyperspectral Imaging (HSI) and AI in Fruit Quality Inspection and Disease/Fungus Detection</em> · Nong Lam University Ho Chi Minh City (NLU) (Oct 2026)</div>
+            <div class="award-details">Project: <em>Fruit Scan – Application of Hyperspectral Imaging (HSI) and AI in Fruit Quality Inspection and Disease/Fungus Detection</em> &bull; Nong Lam University Ho Chi Minh City (NLU) (Oct 2026)</div>
           </div>
         </li>
         <li class="award-item">
-          <span class="award-date">2026</span>
+          <span class="award-date"><span class="date-chip">2026</span></span>
           <div class="award-content">
             <span class="award-name">🎓 Talent Student Scholarship</span> – <strong>HUTECH Institute of Engineering</strong>
-            <div class="award-details">Ho Chi Minh City University of Technology (HUTECH) · Awarded at the Freshmen Welcome Ceremony (Class of 2026)</div>
+            <div class="award-details">Ho Chi Minh City University of Technology (HUTECH) &bull; Awarded at the Freshmen Welcome Ceremony (Class of 2026)</div>
           </div>
         </li>
         <li class="award-item">
-          <span class="award-date">2026</span>
+          <span class="award-date"><span class="date-chip">2026</span></span>
           <div class="award-content">
             <span class="award-name">🏆 Special Prize</span> – <strong>InnoStar 2026</strong>
             <div class="award-details">Student Startup Idea Competition (Sep 2026)</div>
           </div>
         </li>
         <li class="award-item">
-          <span class="award-date">2026</span>
+          <span class="award-date"><span class="date-chip">2026</span></span>
           <div class="award-content">
             <span class="award-name">🌟 Potential Prize</span> – <strong>VietFuture Awards 2026</strong>
-            <div class="award-details">Project: <em>Development of an Intelligent Vision-Based Robotic Picking System for Warehouse Automation</em> — Emerging Technologies (Blockchain, Web3, AR/VR, Metaverse &amp; IoT) Field · Vietnam Software &amp; IT Services Association (VINASA) (Sep 2026)</div>
+            <div class="award-details">Project: <em>Development of an Intelligent Vision-Based Robotic Picking System for Warehouse Automation</em> — Emerging Technologies (Blockchain, Web3, AR/VR, Metaverse &amp; IoT) Field &bull; Vietnam Software &amp; IT Services Association (VINASA) (Sep 2026)</div>
           </div>
         </li>
         <li class="award-item">
-          <span class="award-date">2026</span>
+          <span class="award-date"><span class="date-chip">2026</span></span>
           <div class="award-content">
             <span class="award-name">🍁 Full Travel &amp; Accommodation Grant (Fully Funded)</span> – <strong>Autumn School on Applied Mathematics in Climate, Environment and Sustainable Development</strong>
-            <div class="award-details">First UK–Vietnam Meeting on Mathematics for the Environment · Vietnam Institute for Advanced Study in Mathematics (VIASM), Hanoi (Sep 2026)</div>
+            <div class="award-details">First UK–Vietnam Meeting on Mathematics for the Environment &bull; Vietnam Institute for Advanced Study in Mathematics (VIASM), Hanoi (Sep 2026)</div>
           </div>
         </li>
         <li class="award-item">
-          <span class="award-date">2026</span>
+          <span class="award-date"><span class="date-chip">2026</span></span>
           <div class="award-content">
             <span class="award-name">🎖️ Consolation Prize</span> – <strong>Bach Khoa Innovation 2026 (University Category)</strong>
             <div class="award-details">Ho Chi Minh City University of Technology (HCMUT) &amp; Embassy of France in Vietnam (BK-OISP)</div>
           </div>
         </li>
         <li class="award-item">
-          <span class="award-date">2026</span>
+          <span class="award-date"><span class="date-chip">2026</span></span>
           <div class="award-content">
             <span class="award-name">✈️ International Trip Delegate (Fully Funded)</span> – <strong>The NEXGen 2026</strong>
             <div class="award-details">Selected by New Energy Nexus Vietnam for the Southeast Asia Energy &amp; Innovation Trip in Bangkok, Thailand (Oct 2026)</div>
           </div>
         </li>
         <li class="award-item">
-          <span class="award-date">2026</span>
+          <span class="award-date"><span class="date-chip">2026</span></span>
           <div class="award-content">
             <span class="award-name">🥈 Second Prize</span> – <strong>AI Challenge 2026 (University Division)</strong>
             <div class="award-details">National Scientific Conference on AI for Economics and Business (AI4Econ&amp;Biz 2026), Vietnam</div>
           </div>
         </li>
         <li class="award-item">
-          <span class="award-date">2026</span>
+          <span class="award-date"><span class="date-chip">2026</span></span>
           <div class="award-content">
             <span class="award-name">🥈 Second Prize &amp; 🥉 Third Prize</span> – <strong>THINKATHON GREENOVATION 2026</strong>
             <div class="award-details">UEH Mekong Campus, Vietnam</div>
           </div>
         </li>
         <li class="award-item">
-          <span class="award-date">2026</span>
+          <span class="award-date"><span class="date-chip">2026</span></span>
           <div class="award-content">
             <span class="award-name">🥇 Gold Medal</span> – <strong>14th Design, Manufacturing and Application Competition</strong>
             <div class="award-details">Project: <em>FRUITCARE AI</em></div>
           </div>
         </li>
         <li class="award-item">
-          <span class="award-date">2025</span>
+          <span class="award-date"><span class="date-chip">2025</span></span>
           <div class="award-content">
             <span class="award-name">🥈 Second Prize</span> – <strong>VietFuture Awards 2025</strong>
             <div class="award-details">Project: <em>RAPP (Reasoning-Aware Adaptive Prompt Protection)</em> — AI &amp; Automation Field</div>
           </div>
         </li>
         <li class="award-item">
-          <span class="award-date">2025</span>
+          <span class="award-date"><span class="date-chip">2025</span></span>
           <div class="award-content">
             <span class="award-name">🥉 Third Prize</span> – <strong>National Student Artificial Intelligence Olympiad 2025</strong>
             <div class="award-details">Southern Region, Vietnam</div>
           </div>
         </li>
         <li class="award-item">
-          <span class="award-date">2025</span>
+          <span class="award-date"><span class="date-chip">2025</span></span>
           <div class="award-content">
             <span class="award-name">Participant (Partially Funded)</span> in <strong>COMOSA 2025 – Summer School on Optimization and Simulation</strong>
             <div class="award-details">Funded by the Vietnam Institute for Advanced Study in Mathematics (VIASM)</div>
@@ -303,179 +685,133 @@
       </ul>
     </section>
 
-    <!-- ======== PUBLICATIONS SECTION ======== -->
-    <section id="publications-section" class="section">
-      <h2 class="section-title">Publications</h2>
+    <!-- ===== Education Section ===== -->
+    <section class="section-block" id="education">
+      <h2>Education</h2>
 
-      <!-- Journal Articles -->
-      <p class="pub-section-heading">Journal Articles</p>
+      <div class="publications-list">
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title"><a href="https://www.hutech.edu.vn/" target="_blank" rel="noopener noreferrer">Ho Chi Minh City University of Technology (HUTECH)</a></h3>
+            <span class="entry-date">2022 &ndash; 2026 (Expected)</span>
+          </div>
+          <p class="entry-detail"><strong>B.S. in Robotics and Artificial Intelligence</strong> &bull; HUTECH Institute of Engineering</p>
+          <p class="entry-advisor">Honors: Awarded the <em>Talent Student Scholarship</em> (Freshmen Welcome Ceremony Class of 2026)</p>
+        </div>
 
-      <div class="publication-item">
-        <span class="pub-status review">⏳ Under Review · Biomedical Signal Processing and Control</span>
-        <p class="pub-title">
-          <strong>Adaptive Privacy Routing for EEG Representation Protection via Proximal Policy Optimization</strong>
-        </p>
-        <p class="pub-authors">
-          <u>Thien Nhan Vo</u>, Phung Thi Hien, Xuan-The Tran
-        </p>
-        <p class="pub-venue">
-          <em>Biomedical Signal Processing and Control</em>
-        </p>
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title"><a href="https://insec.uit.edu.vn/" target="_blank" rel="noopener noreferrer">University of Information Technology (UIT), VNU-HCM</a></h3>
+            <span class="entry-date">2024 &ndash; Present</span>
+          </div>
+          <p class="entry-detail"><strong>Research Affiliate</strong> &bull; Information Security Laboratory (InSec Lab)</p>
+          <p class="entry-advisor">Focus: LLMs &amp; Agentic Workflows for Smart Contract Fuzzing and Privacy-Preserving AI &bull; Advised by <strong>PhD. Phan The Duy</strong></p>
+        </div>
       </div>
-
-      <div class="publication-item">
-        <span class="pub-status review">⏳ Under Review · Applied Numerical Mathematics</span>
-        <p class="pub-title">
-          <strong>A Sharp Stabilized Semi-Implicit Scheme for the Allen–Cahn Equation: Discrete Invariant Regions, Energy Dissipation, and M-Matrix Contractivity</strong>
-        </p>
-        <p class="pub-authors">
-          <u>Thien Nhan Vo</u> et al.
-        </p>
-        <p class="pub-venue">
-          <em>Applied Numerical Mathematics</em>
-        </p>
-      </div>
-
-      <div class="publication-item">
-        <span class="pub-status review">⏳ Under Review · Springer Nature</span>
-        <p class="pub-title">
-          <strong>Inter- and Intra-Subject Variability in EEG: A Review</strong>
-        </p>
-        <p class="pub-authors">
-          Xuan-The Tran, <u>Thien-Nhan Vo</u>, Son-Tung Vu, Thoa-Thi Tran, Manh-Dat Nguyen, Thomas Do, Chin-Teng Lin
-        </p>
-        <p class="pub-venue">
-          <em>Springer Nature</em> · Preprint: <em>arXiv:2602.01019 [q-bio.NC], 2026.</em>
-        </p>
-        <p class="pub-links">
-          [<a href="https://arxiv.org/abs/2602.01019" target="_blank">arXiv</a>]
-          [<a href="https://arxiv.org/pdf/2602.01019" target="_blank">PDF</a>]
-        </p>
-      </div>
-
-      <!-- Conference Papers -->
-      <p class="pub-section-heading">Conference Papers</p>
-
-      <div class="publication-item">
-        <span class="pub-status accepted">🎉 Accepted · FAIR 2026</span>
-        <p class="pub-title">
-          <strong>A Lightweight Spatial-Temporal Attention Network for Efficient EEG-Based Target Detection in RSVP Brain-Computer Interfaces</strong>
-        </p>
-        <p class="pub-authors">
-          <u>Thien Nhan Vo</u> et al.
-        </p>
-        <p class="pub-venue">
-          <em>The 19th National Conference on Fundamental and Applied IT Research (FAIR’2026)</em>, Ho Chi Minh City, Vietnam, October 2026.
-        </p>
-      </div>
-
-      <div class="publication-item">
-        <span class="pub-status accepted">🎉 Accepted · FAIR 2026</span>
-        <p class="pub-title">
-          <strong>Hyperspectral Mineral Alteration Mapping for Gold Exploration in Serra Branca Brazil</strong>
-        </p>
-        <p class="pub-authors">
-          <u>Thien Nhan Vo</u> et al.
-        </p>
-        <p class="pub-venue">
-          <em>The 19th National Conference on Fundamental and Applied IT Research (FAIR’2026)</em>, Ho Chi Minh City, Vietnam, October 2026.
-        </p>
-      </div>
-
-      <div class="publication-item">
-        <span class="pub-status accepted">🎉 Accepted (Oral Presentation) · SOICT 2026</span>
-        <p class="pub-title">
-          <strong>TriFuse-R: Reliability-Aware Multimodal Fusion for Disaster Damage Assessment</strong>
-        </p>
-        <p class="pub-authors">
-          Tu Hoang Thanh, <u>Thien Nhan Vo</u>, Thi Hien Phung, Ngan Nguyen Xuan Phuong, Ngoc Ngan Huynh, Thanh Xuan Truong
-        </p>
-        <p class="pub-venue">
-          <em>SOICT 2026</em> — The 15th International Symposium on Information and Communication Technology. Accepted for Oral Presentation and publication in proceedings (Paper ID: 3550).
-        </p>
-      </div>
-
-      <!-- Abstract Presentations -->
-      <p class="pub-section-heading">Abstract Presentations</p>
-
-      <div class="publication-item">
-        <span class="pub-status accepted">🎉 Accepted · ISNST 2026</span>
-        <p class="pub-title">
-          <strong>Compact Hyperspectral Representations for Cherry Tomato Surface Symptoms: From Classification to Segmentation</strong>
-        </p>
-        <p class="pub-authors">
-          Quoc Thien Pham<sup>†</sup>, <u>Thien Nhan Vo</u>, Sheng-En Lu, and Nai-Shang Liou*
-        </p>
-        <p class="pub-venue">
-          <em>2026 International Symposium on Novel and Sustainable Technology (ISNST 2026)</em>, Tainan City, Taiwan, October 22–23, 2026. Accepted for Abstract Presentation.
-        </p>
-      </div>
-
-      <div class="publication-item">
-        <span class="pub-status accepted">🎉 Accepted · VJSS-2026</span>
-        <p class="pub-title">
-          <strong>A Label-Efficient and Interpretable Framework for Automated Wafer Defect Inspection via Self-Supervised Vision Transformers and Active Learning</strong>
-        </p>
-        <p class="pub-authors">
-          <u>Thien Nhan Vo</u> et al.
-        </p>
-        <p class="pub-venue">
-          <em>Vietnam–Japan Semiconductor Symposium 2026 (VJSS-2026)</em>, Hanoi, Vietnam, September 2026. Accepted for Poster Presentation.
-        </p>
-      </div>
-
-      <!-- Preprints & Workshop Papers -->
-      <p class="pub-section-heading">Preprints &amp; Workshop Papers</p>
-
-      <div class="publication-item">
-        <span class="pub-status preprint">📄 arXiv:2606.26506</span>
-        <p class="pub-title">
-          <strong>TinyCNNDeep: Lightweight Attention-Based CNN for EEG Classification of Eye States and Sleep Deprivation</strong>
-        </p>
-        <p class="pub-authors">
-          <u>Thien Nhan Vo</u>, Yen Nhi Tran Thi, Ngan Nguyen Xuan Phuong, Xuan-The Tran
-        </p>
-        <p class="pub-venue">
-          <em>arXiv:2606.26506 [eess.SP], 2026.</em>
-        </p>
-        <p class="pub-links">
-          [<a href="https://arxiv.org/abs/2606.26506" target="_blank">arXiv</a>]
-          [<a href="https://arxiv.org/pdf/2606.26506" target="_blank">PDF</a>]
-        </p>
-      </div>
-
     </section>
 
-    <!-- ======== ACADEMIC SERVICE & ACTIVITIES SECTION ======== -->
-    <section id="services-section" class="section">
-      <h2 class="section-title">Academic Service &amp; Activities</h2>
-      <ul class="services-list">
-        <li class="service-item">
-          <span class="service-role">Reviewer</span>
-          <div class="service-content">
-            <span class="service-title">International Conference on Artificial Intelligence, Computer, Data Sciences, and Applications (ACDSA 2027)</span>
-            <div class="service-details">Rio de Janeiro, Brazil · February 2–4, 2027</div>
+    <!-- ===== Experience Section ===== -->
+    <section class="section-block" id="experience">
+      <h2>Experience</h2>
+
+      <div class="experience-container">
+
+        <!-- InSec Lab -->
+        <div class="experience-card">
+          <div class="exp-logo">
+            <img src="assets/images/inseclab.png" alt="InSec Lab UIT">
           </div>
-        </li>
-        <li class="service-item">
-          <span class="service-role">STEM Instructor</span>
-          <div class="service-content">
-            <span class="service-title">VKIST 2026</span>
-            <div class="service-details">Vietnam-Korea Institute of Science and Technology</div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <div>
+                <span class="exp-company"><a href="https://insec.uit.edu.vn/" target="_blank" rel="noopener noreferrer">Information Security Laboratory (InSec Lab)</a></span>
+                <span class="exp-location">VNU-HCM, Vietnam</span>
+              </div>
+              <span class="exp-date">2024 &ndash; Present</span>
+            </div>
+            <div class="exp-role">Research Affiliate / Assistant</div>
+            <div class="exp-details">
+              Advisor: <a href="mailto:ptduy@uit.edu.vn">PhD. Phan The Duy</a><br>
+              Researching automated vulnerability detection, LLM-augmented smart contract fuzzing, and privacy-preserving neural decoding.
+            </div>
           </div>
-        </li>
-      </ul>
+        </div>
+
+        <!-- VKIST -->
+        <div class="experience-card">
+          <div class="exp-logo">
+            <img src="assets/images/vkist.png" alt="VKIST">
+          </div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <div>
+                <span class="exp-company"><a href="https://vkist.gov.vn/" target="_blank" rel="noopener noreferrer">Vietnam–Korea Institute of Science and Technology (VKIST)</a></span>
+                <span class="exp-location">Hanoi, Vietnam</span>
+              </div>
+              <span class="exp-date">Jun. 2026 &ndash; Present</span>
+            </div>
+            <div class="exp-role">STEM Instructor</div>
+            <div class="exp-details">
+              Engaged in educational outreach and practical AI instruction for youth initiatives under VKIST programs.
+            </div>
+          </div>
+        </div>
+
+        <!-- LCOY Viet Nam -->
+        <div class="experience-card">
+          <div class="exp-logo exp-icon-badge lcoy-badge">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <div>
+                <span class="exp-company">LCOY Viet Nam 2026 &bull; YOUNGO (UNFCCC)</span>
+                <span class="exp-location">Vietnam</span>
+              </div>
+              <span class="exp-date">Oct. 2026</span>
+            </div>
+            <div class="exp-role">Official Youth Delegate</div>
+            <div class="exp-details">
+              Selected by Youth Climate Action Network (YNet Vietnam) to contribute to official youth climate policy statements and environmental AI solutions.
+            </div>
+          </div>
+        </div>
+
+        <!-- ACDSA 2027 -->
+        <div class="experience-card">
+          <div class="exp-logo exp-icon-badge acdsa-badge">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <div>
+                <span class="exp-company">ACDSA 2027 Conference</span>
+                <span class="exp-location">Rio de Janeiro, Brazil</span>
+              </div>
+              <span class="exp-date">Sep. 2026 &ndash; Feb. 2027</span>
+            </div>
+            <div class="exp-role">Invited Peer Reviewer</div>
+            <div class="exp-details">
+              Reviewing research papers for the <em>International Conference on Artificial Intelligence, Computer, Data Sciences, and Applications</em>.
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- ======== REFEREES SECTION ======== -->
-    <section id="referees-section" class="section">
-      <h2 class="section-title">Referees</h2>
+    <!-- ===== Referees Section ===== -->
+    <section class="section-block" id="referees">
+      <h2>Referees</h2>
       <div class="referees-grid">
+
         <div class="referee-card">
-          <div class="referee-name">PhD. Phan The Duy</div>
-          <div class="referee-org">
-            Information Security Laboratory (InSecLab)<br/>
-            University of Information Technology, VNU-HCM
+          <div>
+            <div class="referee-name">PhD. Phan The Duy</div>
+            <div class="referee-org">
+              Information Security Laboratory (InSecLab)<br>
+              University of Information Technology, VNU-HCM
+            </div>
           </div>
           <a href="mailto:ptduy@uit.edu.vn" class="referee-email" title="Email PhD. Phan The Duy">
             <i class="fa-regular fa-envelope"></i> ptduy@uit.edu.vn
@@ -483,10 +819,12 @@
         </div>
 
         <div class="referee-card">
-          <div class="referee-name">PhD. Xuan The Tran</div>
-          <div class="referee-org">
-            GrapheneX–UTS Human-centric AI Centre (HAI)<br/>
-            University of Technology Sydney (UTS)
+          <div>
+            <div class="referee-name">PhD. Xuan The Tran</div>
+            <div class="referee-org">
+              GrapheneX–UTS Human-centric AI Centre (HAI)<br>
+              University of Technology Sydney (UTS)
+            </div>
           </div>
           <a href="mailto:contact@anchiste.com" class="referee-email" title="Email PhD. Xuan The Tran">
             <i class="fa-regular fa-envelope"></i> contact@anchiste.com
@@ -494,10 +832,12 @@
         </div>
 
         <div class="referee-card">
-          <div class="referee-name">MS. Pham Quoc Phuong</div>
-          <div class="referee-org">
-            HUTECH Institute of Engineering<br/>
-            Electrical–Electronics Department
+          <div>
+            <div class="referee-name">MS. Pham Quoc Phuong</div>
+            <div class="referee-org">
+              HUTECH Institute of Engineering<br>
+              Electrical–Electronics Department
+            </div>
           </div>
           <a href="mailto:phuongpq@hutech.edu.vn" class="referee-email" title="Email MS. Pham Quoc Phuong">
             <i class="fa-regular fa-envelope"></i> phuongpq@hutech.edu.vn
@@ -505,10 +845,12 @@
         </div>
 
         <div class="referee-card">
-          <div class="referee-name">PhD. Viet Anh Hoang</div>
-          <div class="referee-org">
-            Energy and Environmental Technology Division<br/>
-            Vietnam–Korea Institute of Science and Technology
+          <div>
+            <div class="referee-name">PhD. Viet Anh Hoang</div>
+            <div class="referee-org">
+              Energy and Environmental Technology Division<br>
+              Vietnam–Korea Institute of Science and Technology (VKIST)
+            </div>
           </div>
           <a href="mailto:haviet@most.gov.vn" class="referee-email" title="Email PhD. Viet Anh Hoang">
             <i class="fa-regular fa-envelope"></i> haviet@most.gov.vn
@@ -516,24 +858,43 @@
         </div>
 
         <div class="referee-card">
-          <div class="referee-name">PhD. Quoc Thien Pham</div>
-          <div class="referee-org">
-            HUTECH Institute of Engineering
+          <div>
+            <div class="referee-name">PhD. Quoc Thien Pham</div>
+            <div class="referee-org">
+              HUTECH Institute of Engineering<br>
+              Ho Chi Minh City University of Technology
+            </div>
           </div>
           <a href="mailto:pthien0288@gmail.com" class="referee-email" title="Email PhD. Quoc Thien Pham">
             <i class="fa-regular fa-envelope"></i> pthien0288@gmail.com
           </a>
         </div>
+
       </div>
     </section>
 
-  </main>
+  </div>
+</main>
 
-  <!-- ======== FOOTER ======== -->
-  <footer>
-    <p>&copy; 2026 Vo Thien Nhan. All Rights Reserved.</p>
-  </footer>
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col">
+        &copy; 2026 Vo Thien Nhan. All rights reserved.
+      </div>
+      <div class="footer-col center">
+        Template design inspired by <a href="https://github.com/rootyJeon" target="_blank" rel="noopener noreferrer">Byungwoo Jeon</a> &amp; <a href="https://web.media.mit.edu/~msaveski/" target="_blank" rel="noopener noreferrer">Martin Saveski</a>.
+      </div>
+      <div class="footer-col">
+        Last updated: November 2026
+      </div>
+    </div>
+  </div>
+</footer>
 
-  <script src="js/main.js?v=20261001"></script>
+<!-- Core Script -->
+<script src="js/main.js?v=20261118"></script>
+
 </body>
 </html>
